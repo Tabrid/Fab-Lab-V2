@@ -6,6 +6,7 @@ const DashBoardEvent = () => {
     const [organizedBy, setOrganizedBy] = useState('');
     const [venue, setVenue] = useState('');
     const [descriptions, setDescriptions] = useState([{ keypoint: '', tasks: [''] }]);
+    const [category, setCategory] = useState('upcoming'); // Initialize category state
 
     const handleDescriptionChange = (index, key, value) => {
         const updatedDescriptions = [...descriptions];
@@ -31,7 +32,18 @@ const DashBoardEvent = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log({ title, image, organizedBy, venue, descriptions });
+        console.log({ title, image, organizedBy, venue, descriptions, category }); 
+      
+            fetch('http://localhost:5000/api/event/create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ title, image, organizedBy, venue, descriptions, category }),
+            })
+            .then((response) => response.json())
+            .then((data) => console.log(data))
+        
     };
 
     return (
@@ -51,6 +63,13 @@ const DashBoardEvent = () => {
             <div className="mb-4">
                 <label className="block mb-1">Venue:</label>
                 <input type="text" value={venue} onChange={(e) => setVenue(e.target.value)} className="w-full p-2 border border-gray-300 rounded-md" />
+            </div>
+            <div className="mb-4">
+                <label className="block mb-1">Category:</label>
+                <select value={category} onChange={(e) => setCategory(e.target.value)} className="w-full p-2 border border-gray-300 rounded-md">
+                    <option value="upcoming">Upcoming</option>
+                    <option value="complete">Complete</option>
+                </select>
             </div>
             <div className="mb-4">
                 <button type="button" onClick={addDescription} className="bg-blue-500 text-white px-4 py-2 rounded-md">Add Description</button>
