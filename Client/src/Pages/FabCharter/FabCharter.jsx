@@ -6,7 +6,6 @@ const FabCharter = () => {
     title: {
       label: 'Fab Charter',
       subLabel: null,
-
     },
     links: [
       { label: 'About Us', icon: RiArrowRightDoubleFill },
@@ -39,30 +38,24 @@ const FabCharter = () => {
       question: 'What are your responsibilities?',
       answer: 'Safety: Not hurting people or machines Operations: Assisting with cleaning, maintaining, and improving the lab Knowledge: Contributing to documentation and instruction',
     },
-  ]
-
-
-
+  ];
 
   return (
     <div className="mb-24">
       <Location {...Data} />
-      <div className="flex-col-1 justify-center items-center mx-36">
-      <div>
-        {
-          fabCharter.map((item, index) => (
-            <div key={index} tabIndex={0} className="collapse collapse-plus border border-base-300 bg-base-200 ">
+      <div className="flex flex-col lg:flex-row justify-center items-center ">
+        <div className="w-full lg:w-2/3">
+          {fabCharter.map((item, index) => (
+            <div key={index} tabIndex={0} className="collapse collapse-plus border border-base-300 bg-base-200 mb-4 lg:mb-0">
               <div className="collapse-title text-xl font-medium">
-             { item.question}
+                {item.question}
               </div>
               <div className="collapse-content">
                 <p>{item.answer}</p>
               </div>
             </div>
-          ))
-        }
-      </div>
-
+          ))}
+        </div>
       </div>
     </div>
   );

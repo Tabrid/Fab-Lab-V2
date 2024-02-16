@@ -1,9 +1,20 @@
 import { Link } from "react-router-dom";
 import { BsCalendar2Event } from "react-icons/bs";
 import { IoMdArrowDropright } from "react-icons/io";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 const FabLab = () => {
+    useEffect(() => {
+        AOS.init({
+          once: true,
+          offset: 200, // Adjust offset if needed
+          duration: 1000, // Adjust duration if needed
+          easing: 'ease-in-out', // Adjust easing if needed
+        });
+      }, []);
     return (
-        <div className="hero  bg-base-100 flex ">
+        <div className="hero  bg-base-100 flex " data-aos="zoom-out-down">
             <div className="hero-content flex-col w-1/2 mx-5">
                 <div className="w-full">
                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dGCxYXLfoi4?si=0d9AE6ANe05dKxKT" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
