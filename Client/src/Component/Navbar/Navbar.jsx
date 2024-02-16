@@ -76,7 +76,7 @@ const Navbar = () => {
                         </a>
                         <div className="absolute mt-10 hover:bg-white hidden w-52 rounded-md h-20  p-2 text-black group-hover:block ">
                             <ul className=" bg-white w-52  -ml-2">
-                                <Link to='/project'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Completed</a></li></Link>
+                                <Link to='/project'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Complete</a></li></Link>
                                 <Link to='/comingSoon'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Ongoing</a></li></Link>
                             </ul>
                         </div>
@@ -108,7 +108,7 @@ const Navbar = () => {
                         </a>
                         <div className="absolute mt-10 hover:bg-white hidden w-52 rounded-md h-20  p-2 text-black group-hover:block ">
                             <ul className=" bg-white w-52  -ml-2">
-                                <Link to='/CompleteEvents'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Completed</a></li></Link>
+                                <Link to='/events/complete'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Complete</a></li></Link>
                                 <Link to='/comingSoon'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Upcoming</a></li></Link>
                             </ul>
                         </div>
@@ -141,13 +141,13 @@ const Navbar = () => {
                                         <Link to='/order'>
                                             <div className="btn bg-white border-0 hover:bg-white">
                                                 <FaBoxOpen />
-                                                <h2 className="font-bold text-lg">Order</h2>
+                                                <h2 className="font-bold text-lg">Make Order</h2>
                                             </div>
                                         </Link>
                                         <Link to='/idea'>
                                             <div className="btn bg-white border-0 hover:bg-white">
                                                 <FcIdea />
-                                                <h2 className="font-bold text-lg">Project Ideas</h2>
+                                                <h2 className="font-bold text-lg">Give Idea</h2>
                                             </div>
                                         </Link>
                                         <Link to='/rules'>

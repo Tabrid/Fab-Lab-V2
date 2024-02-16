@@ -4,13 +4,13 @@ import { RiArrowRightDoubleFill } from "react-icons/ri";
 const Gallery = () => {
     const Data = {
         title: {
-          label: 'Gallery',
+          label: 'Video',
           subLabel: null,
         
         },
         links: [
           { label: null, icon: null },
-          { label: 'Gallery', icon: RiArrowRightDoubleFill, color: 'text-[#2e3094]' },
+          { label: 'Video', icon: RiArrowRightDoubleFill, color: 'text-[#2e3094]' },
         ],
       };
 
