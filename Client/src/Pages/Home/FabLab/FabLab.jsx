@@ -3,16 +3,33 @@ import { BsCalendar2Event } from "react-icons/bs";
 import { IoMdArrowDropright } from "react-icons/io";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from "react";
-const FabLab = () => {
-    useEffect(() => {
-        AOS.init({
-          once: true,
-          offset: 200, // Adjust offset if needed
-          duration: 1000, // Adjust duration if needed
-          easing: 'ease-in-out', // Adjust easing if needed
-        });
-      }, []);
+import { useEffect, useState } from "react";
+
+    
+    const FabLab = () => {
+        useEffect(() => {
+            AOS.init({
+              once: true,
+              offset: 200, // Adjust offset if needed
+              duration: 1000, // Adjust duration if needed
+              easing: 'ease-in-out', // Adjust easing if needed
+            });
+          }, []);
+    
+    const [data, setData] = useState([]);
+    fetch('http://localhost:5000/api/event/all')
+        .then(response => response.json())
+        .then(data => {
+            if (Array.isArray(data) && data.length > 0) {
+                const firstSixObjects = data.slice(0, 6);
+                // Do whatever you need with the first six objects
+                setData(firstSixObjects);
+            } else {
+                console.log("No data or empty array received");
+            }
+        })
+        .catch(error => console.error('Error fetching data:', error));
+
     return (
         <div className="hero  bg-base-100 flex " data-aos="zoom-out-down">
             <div className="hero-content flex-col w-1/2 mx-5">
@@ -30,25 +47,17 @@ const FabLab = () => {
                 <div className="card w-full bg-base-100  flex-col items-center justify-center">
                     <h1 className="text-5xl font-bold flex gap-5"><BsCalendar2Event className="text-[#2e3094]" /> NEWS</h1>
                     <div className="card-body">
-                        <Link>
-                        <p className="border-black border-spacing-1 border px-3 py-2 hover:underline flex gap-2"><IoMdArrowDropright className="text-[#2e3094] text-3xl"/> A WORKSHOP ON “DIGITAL FABRICATION FACILITIES FOR ADVANCE RESEARCH” WAS....</p>
-                        </Link>
-                        <Link>
-                        <p className="border-black border-spacing-1 border px-3 py-2 hover:underline flex gap-2"><IoMdArrowDropright className="text-[#2e3094] text-3xl"/>A WORKSHOP ON “DIGITAL FABRICATION FACILITIES FOR ADVANCE RESEARCH” WAS....</p>
-                        </Link>
-                        <Link>
-                        <p className="border-black border-spacing-1 border px-3 py-2 hover:underline flex gap-2"><IoMdArrowDropright className="text-[#2e3094] text-3xl"/>A WORKSHOP ON “DIGITAL FABRICATION FACILITIES FOR ADVANCE RESEARCH” WAS....</p>
-                        </Link>
-                        <Link>
-                        <p className="border-black border-spacing-1 border px-3 py-2 hover:underline flex gap-2"><IoMdArrowDropright className="text-[#2e3094] text-3xl"/>A WORKSHOP ON “DIGITAL FABRICATION FACILITIES FOR ADVANCE RESEARCH” WAS....</p>
-                        </Link>
-                        <Link>
-                        <p className="border-black border-spacing-1 border px-3 py-2 hover:underline flex gap-2"><IoMdArrowDropright className="text-[#2e3094] text-3xl"/>A WORKSHOP ON “DIGITAL FABRICATION FACILITIES FOR ADVANCE RESEARCH” WAS....</p>
-                        </Link>
-                        <Link>
-                        <p className="border-black border-spacing-1 border px-3 py-2 hover:underline flex gap-2"><IoMdArrowDropright className="text-[#2e3094] text-3xl"/>A WORKSHOP ON “DIGITAL FABRICATION FACILITIES FOR ADVANCE RESEARCH” WAS....</p>
-                        </Link>
-                        
+                        {
+                            data.map((event, index) => (
+                                <Link  key={index} className="flex gap-3">
+                                    <Link to={`/event/${event._id}`}>
+                                        <p className="border-black border-spacing-1 border px-3 py-2 hover:underline flex gap-2"><IoMdArrowDropright className="text-[#2e3094] text-3xl" />{event.title}</p>
+                                    </Link>
+                                </Link>
+                            ))
+                        }
+
+
                     </div>
 
                 </div>

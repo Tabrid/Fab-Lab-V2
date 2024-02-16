@@ -7,52 +7,19 @@ import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 const RecentEvent = () => {
-    const data = [
-        {
-            id: 1,
-            image: 'https://i.ibb.co/mTPLgPX/ed08d0a71adccf9d1c90574c448e9a1d.webp',
-            name: 'Product Design and Idea Competition',
-            
-            date: '30 August 2023'
-        },
-        {
-            id: 2,
-            image: 'https://daffodilvarsity.edu.bd/images/event/cde0ef77fddf90c43f7735efbb63b1c6.webp',
-            name: 'Product Design and Idea Competition',
-          
-            date: '30 August 2023'
-        },
-        {
-            id: 3,
-            image: 'https://i.ibb.co/mTPLgPX/ed08d0a71adccf9d1c90574c448e9a1d.webp',
-            name: 'Product Design and Idea Competition',
-            
-            date: '30 August 2023'
-        },
-        {
-            id: 4,
-            image: 'https://i.ibb.co/mTPLgPX/ed08d0a71adccf9d1c90574c448e9a1d.webp',
-            name: 'Product Design and Idea Competition',
-            
-            date: '30 August 2023'
-        },
-        {
-            id: 5,
-            image: 'https://i.ibb.co/mTPLgPX/ed08d0a71adccf9d1c90574c448e9a1d.webp',
-            name: 'Product Design and Idea Competition',
-           
-            date: '30 August 2023'
-        },
-        {
-            id: 6,
-            image: 'https://i.ibb.co/mTPLgPX/ed08d0a71adccf9d1c90574c448e9a1d.webp',
-            name: 'Product Design and Idea Competition',
-            
-            date: '30 August 2023'
-        },
+    const [data, setData] = useState([]); // Initialize data state
+    
+    fetch('http://localhost:5000/api/event/all')
+        .then((response) => response.json())
+        .then((data) => setData(data));
 
-    ]
+
+        const formatDate = (dateString) => {
+            const date = new Date(dateString);
+            return date.toString() !== 'Invalid Date' ? date.toLocaleString() : 'Invalid Date';
+        };
     return (
         <div className=" w-full bg-base-200 flex flex-col justify-center items-center py-16">
             <div className="flex-col flex justify-center items-center mb-5">
@@ -76,10 +43,11 @@ const RecentEvent = () => {
                                     <img src={item.image} alt="sample71" />
 
                                     <figcaption>
-                                        <h3>{item.date} </h3>
-                                        <h1 className='font-semibold'>{item.name} </h1>
-                                        <p>{item.description} </p>
-                                        <Link href="#" >Read More</Link>
+                                        <h3>{formatDate(item.createdAt)}</h3>
+                                        <h1 className='font-semibold'>{item.title} </h1>
+                                        <p>{item.category} </p>
+                                        <p>{item.organizedBy} </p>
+                                        <Link to={`/event/${item._id}`}>Read More</Link>
                                     </figcaption>
                                 </figure>
                             </SwiperSlide>

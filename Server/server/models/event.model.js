@@ -1,4 +1,3 @@
-// backend/models/Event.js
 import mongoose from 'mongoose';
 
 const { Schema } = mongoose;
@@ -15,7 +14,14 @@ const eventSchema = new Schema({
     keypoint: String,
     tasks: [String],
   }],
-});
+  category: {
+    type: String,
+    enum: ['upcoming', 'complete'], // Define enum for valid options
+    default: 'upcoming', // Set default value
+  },
+}
+,{ timestamps: true }
+);
 
 const Event = mongoose.model('Event', eventSchema);
 
