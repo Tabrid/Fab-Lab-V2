@@ -1,0 +1,17 @@
+.animation {
+  animation: slide-in 50s linear infinite; /* Adjust the duration and other properties as needed */
+}
+
+.animation-paused {
+  animation: slide-in 50s linear infinite;/* Pause the animation */
+}
+
+@keyframes slide-in {
+  0% {
+      transform: translateX(100%); /* Start position */
+  }
+
+  100% {
+      transform: translateX(0%); /* End position */
+  }
+}

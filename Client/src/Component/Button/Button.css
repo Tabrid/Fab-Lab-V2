@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+  }
+  
+  :active, :hover, :focus {
+    outline: 0!important;
+    outline-offset: 0;
+  }
+  ::before,
+  ::after {
+    position: absolute;
+    content: "";
+  }
+  
+  .btn-main {
+    position: relative;
+    display: inline-block;
+    width: auto; height: auto;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0px 25px 15px;
+    min-width: 150px;
+  }
+    .btn-main span {         
+      position: relative;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      top: 0; left: 0;
+      width: 100%;
+      padding: 15px 20px;
+      transition: 0.3s;
+    }
+  
+  /*--- btn-2 ---*/
+  .btn-2::before {
+    background-color: #2729a3;
+    transition: 0.3s ease-out;
+  }
+  .btn-2 span {
+    color: rgb(28, 31, 30);
+    border: 1px solid rgb(134, 148, 143);
+    transition: 0.2s;
+  }  
+  .btn-2 span:hover {
+    color: rgb(255,255,255);
+    transition: 0.2s 0.1s;
+  }
+  
+  
+  /* 9. hover-slide-right */
+  .btn-main.hover-slide-right::before {
+    top: 0; bottom: 0; left: 0; 
+    height: 100%; width: 0%;
+  }
+  .btn-main.hover-slide-right:hover::before {
+    width: 100%;
+  }
+  
+  /* 10. hover-opacity */
+  .btn-main.hover-opacity::before {
+    top:0; bottom: 0; right: 0;
+    height: 100%; width: 100%;
+    opacity: 0;
+  }
+  .btn-main.hover-opacity:hover::before {
+    opacity: 1;
+  }
