@@ -21,7 +21,7 @@ const Banner = () => {
                     <img src="https://i.ibb.co/ZLsSfQ3/manifesto-fablab-milano1-orig-removebg.png" className="w-full" />
                 </div>
                 <div className="w-full lg:w-1/2" data-aos="fade-right">
-                    <h1 className="text-5xl font-bold ml-5 lg:ml-0 mb-10">
+                    <h1 className="text-5xl font-bold ml-5 mb-10">
                         <span className="text-[#2e3094]">FABLAB</span> DIU
                         <br />
                         <span className="mt-3 text-3xl">Unleash Your Creativity</span>

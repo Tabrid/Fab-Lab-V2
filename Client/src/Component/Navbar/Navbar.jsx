@@ -4,9 +4,7 @@ import { FaBoxOpen, FaPhotoVideo } from "react-icons/fa";
 import { FcIdea, FcRules } from "react-icons/fc";
 import { FiBox } from "react-icons/fi";
 import { FaCaretDown } from "react-icons/fa";
-
 const Navbar = () => {
-
     return (
         <div className="navbar bg-base-100 sticky z-20 top-0  px-10">
             <div className="navbar-start">
@@ -116,12 +114,10 @@ const Navbar = () => {
 
                 </ul>
             </div>
-
             <div className="navbar-end">
                 <div className="flex gap-28">
                     <Link to='/membership'><button className=" bg-[#2e3094] py-3 px-4 text-white rounded-xl sm:hidden">MEMBERSHIP</button></Link>
                     <div className=" dropdown dropdown-bottom  dropdown-end sm:ml-5">
-
                         <button tabIndex={0}>
                             <img className='h-[40px] w-[40px] ' src="https://i.ibb.co/QM8qsK3/menu.png" alt="logo" />
                         </button>
@@ -129,8 +125,6 @@ const Navbar = () => {
                             <div>
                                 <div className="card bg-base-100  w-80">
                                     <div className="card-body grid grid-cols-2 gap-10">
-
-
                                         <Link to='/image'>
                                             <div className="btn bg-white border-0 hover:bg-white">
                                                 <BsImage />
@@ -167,8 +161,6 @@ const Navbar = () => {
                                                 <FiBox />
                                                 <h2 className="font-bold text-lg">Our Product</h2>
                                             </div></Link>
-
-
                                     </div>
                                 </div>
                             </div>

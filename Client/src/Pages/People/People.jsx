@@ -45,7 +45,7 @@ const People = () => {
     <div>
       <Location {...Data} />
       <div className='flex justify-center'>
-        <div className="flex flex-row justify-center items-center align-middle gap-5 w-1/2">
+        <div className="flex flex-col lg:flex-row md:flex-row justify-center items-center align-middle gap-5 w-1/2">
           <input className="w-full h-10 rounded-[35px] mt-5 px-5 border-slate-950 border-2" value={searchQuery}
           onChange={handleSearchChange} type="url" placeholder="Search" />
           <select className="bg-white mt-5 h-10 hover:bg-white rounded-full border-slate-950 border-2" onChange={handleFilterChange}>
