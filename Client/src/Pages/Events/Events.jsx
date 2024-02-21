@@ -20,7 +20,9 @@ const Events = () => {
     return (
         <div>
              <Location {...Data} />
+            <div className="flex justify-center items-center">
             <RecentEvent/>
+            </div>
         </div>
     );
 };

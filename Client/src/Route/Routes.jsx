@@ -51,6 +51,7 @@ import DashBoardAddVideo from "../Pages/Dashboard/DashBoardVideo/DashBoardAddVid
 import DashBoardAddImage from "../Pages/Dashboard/DashBoardImage/DashBoardAddImage";
 import DashBoardEditImage from "../Pages/Dashboard/DashBoardImage/DashBoardEditImage";
 import DashBoardEditVideo from "../Pages/Dashboard/DashBoardVideo/DashBoardEditVideo";
+import PrivateRoute from "./PrivateRoutes";
 
  export const router = createBrowserRouter([
     {
@@ -165,7 +166,7 @@ import DashBoardEditVideo from "../Pages/Dashboard/DashBoardVideo/DashBoardEditV
     },
     {
       path: "/dashboard",
-      element: <DashBoard></DashBoard>,
+      element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
       children: [
         {
           path: "/dashboard",

@@ -55,8 +55,8 @@ const Project = () => {
     return (
         <div>
             <Location {...Data} />
-            <div className='my-10 px-10 flex justify-center'>
-                <div className='grid grid-cols-3 gap-5'>
+            <div className='my-10  flex justify-center items-center'>
+                <div className='grid grid-cols-1  md:grid-cols-3 lg:grid-cols-3 gap-5'>
                     {
                         project.map((item, index) => (
                             <div key={index} className="card w-96 bg-base-100 shadow-xl  border-slate-950 border-spacing-0.5 border">

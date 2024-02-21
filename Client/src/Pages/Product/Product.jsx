@@ -33,7 +33,8 @@ const Product = () => {
     <div className='mb-10'>
       <Location {...Data} />
 
-      <div className='flex justify-center my-5 gap-10'>
+      <div className='flex justify-center items-center'>
+      <div className='grid grid-cols-1  md:grid-cols-3 lg:grid-cols-3 gap-5'>
        {
         Product.map((item) => (
           <div key={item.id} className="card w-96 bg-base-100 shadow-xl">
@@ -50,6 +51,7 @@ const Product = () => {
         </div>
         ))
        }
+      </div>
       </div>
     </div>
   );

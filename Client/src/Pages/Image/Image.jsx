@@ -38,7 +38,7 @@ const Image = () => {
             <div className='flex justify-center'>
 
                 <PhotoProvider>
-                    <div className="foo grid grid-cols-3 gap-5 my-5">
+                    <div className=" grid grid-cols-1  md:grid-cols-3 lg:grid-cols-3 gap-5 my-5">
                         {data.map((item, index) => (
                             <PhotoView key={index} src={item.img}>
                                 <img src={item.img} alt="" />

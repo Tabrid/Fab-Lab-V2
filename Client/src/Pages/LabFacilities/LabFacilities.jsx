@@ -38,23 +38,23 @@ const LabFacilities = () => {
                 <Location {...Data} />
             </div>
 
-            <div className='grid grid-cols-3 gap-5 mx-5'>
+            <div className='flex justify-center items-center'>
+            <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-5 '>
                 {
                     labFacility.map((item, index) => (
                         <div key={index} className="card w-96 bg-base-100 shadow-xl">
-                            <figure><img src={item.img} alt="Shoes" /></figure>
+                            <figure><img src={item.img} alt="image" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">
                                     {item.title}
                                 </h2>
                                 <p>{item.discription}</p>
-                                <div className="card-actions justify-start ">
-                                    <div className=" btn py-3 px-5 bg-[#2729a3] hover:bg-[#2729a3] text-white">Read More</div>
-                                </div>
+                                
                             </div>
                         </div>
                     ))
                 }
+            </div>
             </div>
         </div>
     );

@@ -32,7 +32,7 @@ const Gallery = () => {
            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10">
             {
               video.map((item, index) => (
-                <iframe key={index} width="560" height="315" src={item.link} title="YouTube video player"  allow=" " allowfullscreen></iframe>
+                <iframe key={index} width="100%" height="315" src={item.link} title="YouTube video player"  allow=" " allowfullscreen></iframe>
               ))
             }
             </div>
