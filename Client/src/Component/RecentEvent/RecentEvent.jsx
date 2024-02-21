@@ -22,17 +22,31 @@ const RecentEvent = () => {
         };
     return (
         <div className=" w-full bg-base-200 flex flex-col justify-center items-center py-16">
-            <div className="flex-col flex justify-center items-center mb-5">
+            <div className="flex-col flex justify-center items-center mb-5 ">
                 <h2 className="text-5xl font-bold uppercase">Recent events</h2>
-                <p className="text-lg py-3">FabLab DIU always try to arrange innovative Event for students.</p>
+                <p className="text-lg p-3">FabLab DIU always try to arrange innovative Event for students.</p>
             </div>
             <>
                 <Swiper
-                    slidesPerView={3}
+                    slidesPerView={1}
                     spaceBetween={30}
                     pagination={{
                         clickable: true,
                     }}
+                    breakpoints={{
+                        640: {
+                          slidesPerView: 2,
+                          spaceBetween: 20,
+                        },
+                        768: {
+                          slidesPerView: 3,
+                          spaceBetween: 40,
+                        },
+                        1024: {
+                          slidesPerView: 4,
+                          spaceBetween: 50,
+                        },
+                      }}
                     modules={[Pagination]}
                     className="mySwiper "
                 >

@@ -4,9 +4,7 @@ import { FaBoxOpen, FaPhotoVideo } from "react-icons/fa";
 import { FcIdea, FcRules } from "react-icons/fc";
 import { FiBox } from "react-icons/fi";
 import { FaCaretDown } from "react-icons/fa";
-
 const Navbar = () => {
-
     return (
         <div className="navbar bg-base-100 sticky z-20 top-0  px-10">
             <div className="navbar-start">
@@ -76,7 +74,7 @@ const Navbar = () => {
                         </a>
                         <div className="absolute mt-10 hover:bg-white hidden w-52 rounded-md h-20  p-2 text-black group-hover:block ">
                             <ul className=" bg-white w-52  -ml-2">
-                                <Link to='/project'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Completed</a></li></Link>
+                                <Link to='/project'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Complete</a></li></Link>
                                 <Link to='/comingSoon'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Ongoing</a></li></Link>
                             </ul>
                         </div>
@@ -108,7 +106,7 @@ const Navbar = () => {
                         </a>
                         <div className="absolute mt-10 hover:bg-white hidden w-52 rounded-md h-20  p-2 text-black group-hover:block ">
                             <ul className=" bg-white w-52  -ml-2">
-                                <Link to='/CompleteEvents'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Completed</a></li></Link>
+                                <Link to='/events/complete'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Complete</a></li></Link>
                                 <Link to='/comingSoon'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Upcoming</a></li></Link>
                             </ul>
                         </div>
@@ -116,12 +114,10 @@ const Navbar = () => {
 
                 </ul>
             </div>
-
             <div className="navbar-end">
                 <div className="flex gap-28">
                     <Link to='/membership'><button className=" bg-[#2e3094] py-3 px-4 text-white rounded-xl sm:hidden">MEMBERSHIP</button></Link>
                     <div className=" dropdown dropdown-bottom  dropdown-end sm:ml-5">
-
                         <button tabIndex={0}>
                             <img className='h-[40px] w-[40px] ' src="https://i.ibb.co/QM8qsK3/menu.png" alt="logo" />
                         </button>
@@ -129,8 +125,6 @@ const Navbar = () => {
                             <div>
                                 <div className="card bg-base-100  w-80">
                                     <div className="card-body grid grid-cols-2 gap-10">
-
-
                                         <Link to='/image'>
                                             <div className="btn bg-white border-0 hover:bg-white">
                                                 <BsImage />
@@ -141,13 +135,13 @@ const Navbar = () => {
                                         <Link to='/order'>
                                             <div className="btn bg-white border-0 hover:bg-white">
                                                 <FaBoxOpen />
-                                                <h2 className="font-bold text-lg">Order</h2>
+                                                <h2 className="font-bold text-lg">Make Order</h2>
                                             </div>
                                         </Link>
                                         <Link to='/idea'>
                                             <div className="btn bg-white border-0 hover:bg-white">
                                                 <FcIdea />
-                                                <h2 className="font-bold text-lg">Project Ideas</h2>
+                                                <h2 className="font-bold text-lg">Give Idea</h2>
                                             </div>
                                         </Link>
                                         <Link to='/rules'>
@@ -167,8 +161,6 @@ const Navbar = () => {
                                                 <FiBox />
                                                 <h2 className="font-bold text-lg">Our Product</h2>
                                             </div></Link>
-
-
                                     </div>
                                 </div>
                             </div>

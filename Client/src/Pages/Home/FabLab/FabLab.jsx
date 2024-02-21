@@ -31,10 +31,10 @@ import { useEffect, useState } from "react";
         .catch(error => console.error('Error fetching data:', error));
 
     return (
-        <div className="hero  bg-base-100 flex " data-aos="zoom-out-down">
-            <div className="hero-content flex-col w-1/2 mx-5">
+        <div className="hero  bg-base-100 flex flex-col md:flex-row lg:flex-row" data-aos="zoom-out-down">
+            <div className="hero-content flex-col w-full md:w-1/2 lg:w-1/2 mx-5">
                 <div className="w-full">
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dGCxYXLfoi4?si=0d9AE6ANe05dKxKT" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/dGCxYXLfoi4?si=0d9AE6ANe05dKxKT" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div className="w-full">
                     <h1 className="text-5xl font-bold"><span className="text-[#2e3094]">FABLAB</span> DIU</h1>
@@ -43,7 +43,7 @@ import { useEffect, useState } from "react";
 
                 </div>
             </div>
-            <div className="w-1/2 mx-5">
+            <div className="w-1/2 md:w-1/2 lg:w-1/2 mx-5">
                 <div className="card w-full bg-base-100  flex-col items-center justify-center">
                     <h1 className="text-5xl font-bold flex gap-5"><BsCalendar2Event className="text-[#2e3094]" /> NEWS</h1>
                     <div className="card-body">
