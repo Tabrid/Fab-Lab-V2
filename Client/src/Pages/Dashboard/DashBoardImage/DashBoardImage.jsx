@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import { BounceLoader } from "react-spinners";
 
 const DashBoardImage = () => {
     const data = [
@@ -33,6 +34,7 @@ const DashBoardImage = () => {
                 console.log(result);
             });
     }
+    <BounceLoader color="#2e3094" />
     return (
         <div>
             <div className="mx-14 flex justify-center my-10 items-center">

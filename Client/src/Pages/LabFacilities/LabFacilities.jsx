@@ -32,6 +32,7 @@ const LabFacilities = () => {
             discription: 'Seminars on different topics about Fabrication and 4th IR '
         },
     ]
+    
     return (
         <div className='my-10'>
             <div>

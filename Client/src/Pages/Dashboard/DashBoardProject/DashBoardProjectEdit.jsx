@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
+import { BounceLoader } from 'react-spinners';
 
 const data = ["complete", "ongoing"];
 
@@ -36,7 +37,7 @@ const DashBoardProjectEdit = () => {
             console.error('Error updating project:', error);
         });
     };
-
+<BounceLoader color="#2e3094" />
     return (
         <div className='flex flex-col justify-center items-center'>
             <h1 className="font-bold text-3xl my-10">Update Project</h1>

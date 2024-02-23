@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import 'react-photo-view/dist/react-photo-view.css';
 import { Link, useNavigate } from 'react-router-dom';
+import { BounceLoader } from 'react-spinners';
 
 const DashBoardMachine = () => {
     const [data , setData]=useState([]);
@@ -18,7 +19,7 @@ const DashBoardMachine = () => {
     const handleDelete = (id) => {
         console.log(id);
     }
-
+<BounceLoader color="#2e3094" />
     return (
         <div className='my-10 px-10 flex flex-col justify-center'>
             <div className="mx-14 flex justify-between mb-10 items-center">

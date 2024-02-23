@@ -29,6 +29,7 @@ const Product = () => {
       description: 'Some quick example text to build on the card title and make up the bulk of the card content.',
     },
   ]
+  
   return (
     <div className='mb-10'>
       <Location {...Data} />

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { BounceLoader } from "react-spinners";
 
 
 const DashBoardProject = () => {
@@ -34,7 +35,7 @@ const DashBoardProject = () => {
                 console.log(result);
             });
     }
-
+<BounceLoader color="#2e3094" />
     return (
         <div>
             <div className="mx-14 flex justify-between mb-10 items-center">

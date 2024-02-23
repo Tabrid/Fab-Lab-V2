@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Slide.css'; // Import your CSS file
+import { BounceLoader } from 'react-spinners';
 
 const Slide = () => {
     const [isHovered, setIsHovered] = useState(false);
@@ -17,6 +18,7 @@ const Slide = () => {
             }
         })
         .catch(error => console.error('Error fetching data:', error));
+        <BounceLoader color="#2e3094" />
     return (
         <div>
             <div className='w-full bg-base-200 fixed z-10'>

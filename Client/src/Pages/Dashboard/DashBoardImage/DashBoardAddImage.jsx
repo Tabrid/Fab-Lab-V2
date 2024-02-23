@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { BounceLoader } from "react-spinners";
 import swal from "sweetalert";
 
 
@@ -37,7 +38,8 @@ const DashBoarAddImage = () => {
           navigate('/');
         }
       })
-    }
+  }
+  <BounceLoader color="#2e3094" />
     return (
         <div>
             <div className='flex flex-col justify-center items-center '>
