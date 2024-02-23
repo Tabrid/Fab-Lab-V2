@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { BounceLoader } from "react-spinners";
 
 
 const DashBoardMember = () => {
@@ -15,6 +16,7 @@ const DashBoardMember = () => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     return date.toLocaleDateString('en-US', options);
   };
+  <BounceLoader color="#2e3094" />
   return (
     <div className="bg-gray-200 min-h-screen py-8">
       <div className="container mx-auto px-4">

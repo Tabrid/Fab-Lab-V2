@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
+import { BounceLoader } from 'react-spinners';
 const skills = [
   "Design Team (2D & 3D)",
   "Printing Team",
@@ -89,7 +90,7 @@ const Membership = () => {
       })
     e.preventDefault();
   };
-
+<BounceLoader color="#2e3094" />
   return (
     <div className="max-w-md mx-auto  p-6 bg-gray-100 rounded-lg shadow-md my-20 mt-14">
       <h2 className="text-xl font-semibold mb-4">Membership Form</h2>

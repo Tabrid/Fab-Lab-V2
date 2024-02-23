@@ -1,6 +1,7 @@
 import { useContext } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import {  useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext";
+import { BounceLoader } from "react-spinners";
 
 
 const Login = () => {
@@ -28,7 +29,7 @@ const Login = () => {
     }
 
     
-    
+    <BounceLoader color="#2e3094" />
     return (
         <div className='flex justify-center  my-9'>
             <div className="card w-96 shadow-2xl ">

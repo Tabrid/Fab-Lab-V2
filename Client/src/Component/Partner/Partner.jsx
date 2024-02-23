@@ -1,6 +1,7 @@
 import{ useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import {  BounceLoader } from 'react-spinners';
 
 const Partner = () => {
     const data = [
@@ -21,7 +22,7 @@ const Partner = () => {
     useEffect(() => {
         AOS.init({ once: true });
     }, []);
-
+<BounceLoader color="#2e3094" />
     return (
         <div className="w-full bg-base-100 flex flex-col justify-center items-center py-16" data-aos="zoom-in">
             <div className="flex-col flex justify-center items-center">

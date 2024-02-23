@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Location from '../../Component/Location/Location';
 import { RiArrowRightDoubleFill } from "react-icons/ri";
+import { BounceLoader } from 'react-spinners';
 
 const People = () => {
 
@@ -40,7 +41,7 @@ const People = () => {
     person.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
     (selectedFilter === 'ALL' || person.category === selectedFilter)
   );
-
+<BounceLoader color="#2e3094" />
   return (
     <div>
       <Location {...Data} />

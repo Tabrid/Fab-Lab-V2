@@ -6,6 +6,7 @@ import { FaArrowsToDot } from "react-icons/fa6";
 import { TbCircleDotFilled } from "react-icons/tb";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { BounceLoader } from "react-spinners";
 const SingleEvent = () => {
     const [event , setEvent]=useState();
     const { id } = useParams();
@@ -32,6 +33,7 @@ const SingleEvent = () => {
             },
         ],
     };
+    <BounceLoader color="#2e3094" />
     return (
         <div>
             <Location {...Data} />

@@ -1,5 +1,6 @@
 import { RiArrowRightDoubleFill } from "react-icons/ri";
 import Location from "../../Component/Location/Location";
+import { BounceLoader } from "react-spinners";
 
 const FabCharter = () => {
   const Data = {
@@ -39,7 +40,7 @@ const FabCharter = () => {
       answer: 'Safety: Not hurting people or machines Operations: Assisting with cleaning, maintaining, and improving the lab Knowledge: Contributing to documentation and instruction',
     },
   ];
-
+<BounceLoader color="#2e3094" />
   return (
     <div className="mb-24">
       <Location {...Data} />

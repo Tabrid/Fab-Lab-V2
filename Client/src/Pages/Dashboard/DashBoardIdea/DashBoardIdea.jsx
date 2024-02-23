@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { BounceLoader } from "react-spinners";
 
 
 const DashBoardIdea = () => {
@@ -10,6 +11,7 @@ const DashBoardIdea = () => {
       .then(data => setMemberships(data))
       .catch(error => console.error('Error fetching membership data:', error));
   }, []);
+  <BounceLoader color="#2e3094" />
   return (
     <div className="bg-gray-200 min-h-screen py-8">
       <h1 className="text-2xl font-bold mb-4">Idea Box</h1> 

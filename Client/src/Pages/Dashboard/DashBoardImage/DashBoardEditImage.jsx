@@ -1,6 +1,7 @@
 import  { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
+import { BounceLoader } from 'react-spinners';
 
 
 const DashBoardEditImage = () => {
@@ -29,7 +30,7 @@ const DashBoardEditImage = () => {
                 console.log(result);
             });
     };
-
+<BounceLoader color="#2e3094" />
     return (
         <div className='flex flex-col justify-center items-center '>
             <h1 className="font-bold text-3xl my-10">Update Image</h1>

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { BounceLoader } from 'react-spinners';
 const DashBoardProduct = () => {
 
     const [Product, setProduct] = useState([]);
@@ -24,6 +25,7 @@ const DashBoardProduct = () => {
                 console.log(result);
             });
     }
+    <BounceLoader color="#2e3094" />
     return (
         <div className='mb-10'>
             <div className="mx-14 flex justify-between mb-10 items-center">

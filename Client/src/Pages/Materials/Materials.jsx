@@ -3,6 +3,7 @@ import { RiArrowRightDoubleFill } from "react-icons/ri";
 import { useForm } from 'react-hook-form';
 import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
+import { BounceLoader } from 'react-spinners';
 const Materials = () => {
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -45,6 +46,7 @@ const Materials = () => {
         }
       })
   }
+  <BounceLoader color="#2e3094" />
   return (
     <div>
       <Location {...Data} />

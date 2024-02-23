@@ -4,6 +4,7 @@ import { IoMdArrowDropright } from "react-icons/io";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect, useState } from "react";
+import { BounceLoader } from "react-spinners";
 
     
     const FabLab = () => {
@@ -29,7 +30,7 @@ import { useEffect, useState } from "react";
             }
         })
         .catch(error => console.error('Error fetching data:', error));
-
+<BounceLoader color="#2e3094" />
     return (
         <div className="hero  bg-base-100 flex flex-col md:flex-row lg:flex-row" data-aos="zoom-out-down">
             <div className="hero-content flex-col w-full md:w-1/2 lg:w-1/2 mx-5">

@@ -8,6 +8,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { BounceLoader } from 'react-spinners';
 const RecentEvent = () => {
     const [data, setData] = useState([]); // Initialize data state
     
@@ -19,7 +20,8 @@ const RecentEvent = () => {
         const formatDate = (dateString) => {
             const date = new Date(dateString);
             return date.toString() !== 'Invalid Date' ? date.toLocaleString() : 'Invalid Date';
-        };
+    };
+    <BounceLoader color="#2e3094" />
     return (
         <div className=" w-full bg-base-200 flex flex-col justify-center items-center py-16">
             <div className="flex-col flex justify-center items-center mb-5 ">

@@ -1,5 +1,6 @@
 import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
+import { BounceLoader } from 'react-spinners';
 
 const data = ["Heavy-Machineries", "Electronics", "Power-Tools", "Other-Tools"];
 
@@ -40,7 +41,8 @@ const DashBoardAddMachine = () => {
           navigate('/');
         }
       })
-    }
+  }
+  <BounceLoader color="#2e3094" />
         return (
             <div className='flex flex-col justify-center items-center '>
                 <h1 className="font-bold text-3xl my-10">Add Machine</h1>
