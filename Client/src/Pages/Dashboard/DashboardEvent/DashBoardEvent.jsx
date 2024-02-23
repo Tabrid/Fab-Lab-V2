@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BounceLoader } from "react-spinners";
+
 
 const DashBoardEvent = () => {
     const [title, setTitle] = useState('');
@@ -35,7 +35,7 @@ const DashBoardEvent = () => {
         event.preventDefault();
         console.log({ title, image, organizedBy, venue, descriptions, category }); 
       
-            fetch('https://fab-lab-server-production.up.railway.app/api/event/create', {
+            fetch('http://localhost:5000/api/event/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const DashBoardEvent = () => {
             .then((data) => console.log(data))
         
     };
-<BounceLoader color="#2e3094" />
+
     return (
         <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-4 p-4 border border-gray-300 rounded-lg">
             <div className="mb-4">

@@ -37,10 +37,10 @@ app.use('/api/order', orderRoutes);
 app.use('/api/membership', membershipRoutes);
 app.use('/api/person', personRoutes);
 
-
 app.get("/", (req, res) => {
   res.send("Server Running");
 });
+
 
 app.listen(PORT, () => {
   connectDB();

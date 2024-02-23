@@ -1,64 +1,67 @@
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { BounceLoader } from "react-spinners";
 
 const DashBoardImage = () => {
-    const data = [
-        {
-            id: 1,
-            img: "https://i.ibb.co/zxxnfb2/image.png"
-        },
-        {
-            id: 2,
-            img: "https://i.ibb.co/WKSSDhz/image.png"
-        },
-        {
-            id: 3,
-            img: "https://i.ibb.co/Rg4Wb5v/image.png"
-        },
-        {
-            id: 4,
-            img: "https://i.ibb.co/x8vX5cF/image.png"
-        },
-    ]
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true); 
     const navigate = useNavigate();
-    const handleEdit = (id) => {
-        navigate(`/dashboard/editimage/${id}`)
 
-    }
+    useEffect(() => {
+        setLoading(true); 
+        fetch("https://fab-lab-server-production.up.railway.app/api/person/all")
+            .then((res) => res.json())
+            .then((data) => {
+                setData(data);
+                setLoading(false); 
+            })
+            .catch((error) => {
+                console.error("Error fetching data:", error);
+                setLoading(false); 
+            });
+    }, []);
+
+    const handleEdit = (id) => {
+        navigate(`/dashboard/editimage/${id}`);
+    };
+
     const handleDelete = (id) => {
         fetch(`https://fab-lab-server-production.up.railway.app/api/person/delete/${id}`, {
-            method: 'DELETE'
+            method: "DELETE",
         })
-            .then(res => res.json())
-            .then(result => {
+            .then((res) => res.json())
+            .then((result) => {
                 console.log(result);
             });
-    }
-    <BounceLoader color="#2e3094" />
+    };
+
     return (
         <div>
             <div className="mx-14 flex justify-center my-10 items-center">
-                <Link to='/dashboard/addimage'><button className="btn btn-sm bg-[#2e3094] hover:bg-[#2e3094] text-white">Add</button></Link>
+                <Link to="/dashboard/addimage">
+                    <button className="btn btn-sm bg-[#2e3094] hover:bg-[#2e3094] text-white">Add</button>
+                </Link>
             </div>
-            <div className='flex justify-center'>
-
-
+            <div className="flex justify-center">
                 <div className="foo grid grid-cols-3 gap-5 my-5">
-                    {data.map((item, index) => (
-
-                        <div key={index} className="card border border-black p-5">
-                            <img key={index} src={item.img} alt="" />
-                            <div className=" flex justify-center w-full mb-5">
-                                <div className=" flex gap-5 mt-5">
-                                    <button onClick={() => handleEdit(item._id)} className="btn btn-sm bg-[#2e3094] hover:bg-[#2e3094] text-white">Edit</button>
-                                    <button onClick={() => handleDelete(item._id)} className="btn btn-sm bg-[#2e3094] hover:bg-[#2e3094] text-white">Delete</button>
+                    {loading ? ( 
+                        <div className="flex justify-center items-center w-full h-full">
+                            <BounceLoader color="#2e3094" />
+                        </div>
+                    ) : (
+                        data.map((item) => (
+                            <div key={item._id} className="card border border-black p-5">
+                                <img src={item.img} alt="" />
+                                <div className="flex justify-center w-full mb-5">
+                                    <div className="flex gap-5 mt-5">
+                                        <button onClick={() => handleEdit(item._id)} className="btn btn-sm bg-[#2e3094] hover:bg-[#2e3094] text-white">Edit</button>
+                                        <button onClick={() => handleDelete(item._id)} className="btn btn-sm bg-[#2e3094] hover:bg-[#2e3094] text-white">Delete</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                    ))}
+                        ))
+                    )}
                 </div>
-
             </div>
         </div>
     );
