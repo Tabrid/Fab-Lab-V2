@@ -75,7 +75,7 @@ const People = () => {
       </div>
       <div className='flex justify-center p-5 m-5'>
         {
-          loader ? <BounceLoader color="#2e3094" /> :<div className='grid  lg:grid-cols-2 gap-5'>
+          loader ? <BounceLoader color="#2e3094"/> :<div className='grid  lg:grid-cols-2 gap-5'>
           {
             filteredPeople.map((person, index) => (
               <div key={index} className="card w-96 bg-base-100 shadow-xl border-slate-950 border-spacing-0.5 border">

@@ -1,68 +1,66 @@
-import  { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { BounceLoader } from 'react-spinners';
 
-const data = ["Heavy-Machineries", "Electronics", "Power-Tools", "Other-Tools"];
-
-const DashBoardMachineEdit = () => {
-    const [people, setPeople] = useState({});
-    const { id } = useParams();
-    const { register, handleSubmit, formState: { errors } } = useForm();
+const DashBoardMachine = () => {
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true); 
 
     useEffect(() => {
-        fetch(`https://fab-lab-server-production.up.railway.app/api/machine/machineries/${id}`)
+        fetch('https://fab-lab-server-production.up.railway.app/api/machine/machineries')
             .then(res => res.json())
             .then(data => {
-                setPeople(data);
-
+                setData(data);
+                setLoading(false); 
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+                setLoading(false); 
             });
-    }, [id]);
+    }, []);
 
-    const onSubmit = (data) => {
-        fetch(`https://fab-lab-server-production.up.railway.app/api/machine/machineries/${id}`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-            .then(res => res.json())
-            .then(result => {
-                console.log(result);
-            });
+    const navigate = useNavigate();
+
+    const handleEdit = (id) => {
+        navigate(`/dashboard/editmachine/${id}`);
     };
-<BounceLoader color="#2e3094" />
+
+    const handleDelete = (id) => {
+        console.log(id);
+    };
+
     return (
-        <div className='flex flex-col justify-center items-center '>
-            <h1 className="font-bold text-3xl my-10">Update Machine</h1>
-            <div className="w-1/2">
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 flex flex-col justify-center items-center">
-                    <input type="text" {...register('name')} placeholder="Name" className="border border-gray-300 rounded-md px-3 py-2 input input-bordered w-full max-w-x" defaultValue={people?.name} />
-                    {errors.name && (
-                        <p className="text-red-600">{errors.name?.message}</p>
-                    )}
-                    <br />
-                    <select {...register('category')} className="border border-gray-300 rounded-md px-3 py-2 input input-bordered w-full max-w-x" defaultValue={people?.category}>
-                        <option value="">Select Category</option>
-                        {data.map((category, index) => (
-                            <option key={index} value={category}>{category}</option>
-                        ))}
-                    </select>
-                    {errors.category && (
-                        <p className="text-red-600">{errors.category?.message}</p>
-                    )}
-                    <br />
-                    <input type="text" {...register('image')} className="border border-gray-300 rounded-md px-3 py-2 input input-bordered w-full max-w-x" placeholder="Enter your picture" defaultValue={people?.image} />
-                    {errors.image && (
-                        <p className="text-red-600">{errors.image?.message}</p>
-                    )}
-                    <br />
-                    <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
-                </form>
+        <div className='my-10 px-10 flex flex-col justify-center'>
+            <div className="mx-14 flex justify-between mb-10 items-center">
+                <input className="w-1/2 h-10 rounded-[35px] mt-5 px-5 border border-black" type="text" placeholder="Search" />
+                <Link to='/dashboard/addmachine'><button className="btn btn-sm bg-[#2e3094] hover:bg-[#2e3094] text-white">Add</button></Link>
             </div>
+            {loading ? ( 
+                <div className="flex justify-center items-center h-full">
+                    <BounceLoader color="#2e3094" />
+                </div>
+            ) : (
+                <div className='grid grid-cols-2 gap-5'>
+                    {
+                        data.map((item, index) => (
+                            <button key={index} className="card w-96 bg-base-100 shadow-xl  border-slate-950 border-spacing-0.5 border">
+                                <figure className="px-10 pt-10">
+                                    <img src={item.image} alt="Shoes" className="rounded-xl" />
+                                </figure>
+                                <div className="card-body w-full items-center text-center border-slate-950 border-spacing-0.5 border-t">
+                                    <h2 className="card-title">{item.name}</h2>
+                                </div>
+                                <div className="flex justify-between mb-5 gap-10 ml-10">
+                                    <button onClick={() => handleEdit(item._id)} className="btn btn-sm bg-[#2e3094] hover:bg-[#2e3094] text-white">Edit</button>
+                                    <button onClick={() => handleDelete(item._id)} className="btn btn-sm bg-[#2e3094] hover:bg-[#2e3094] text-white">Delete</button>
+                                </div>
+                            </button>
+                        ))
+                    }
+                </div>
+            )}
         </div>
     );
 };
 
-export default DashBoardMachineEdit;
+export default DashBoardMachine;

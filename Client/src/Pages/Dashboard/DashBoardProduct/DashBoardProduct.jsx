@@ -1,23 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { BounceLoader } from 'react-spinners';
-const DashBoardProduct = () => {
 
-    const [Product, setProduct] = useState([]);
-    fetch('https://fab-lab-server-production.up.railway.app/api/product/products')
-        .then(res => res.json())
-        .then(data => {
-            setProduct(data);
-        });
+const DashBoardProduct = () => {
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true); 
+
+    useEffect(() => {
+        fetch('https://fab-lab-server-production.up.railway.app/api/product/products')
+            .then(res => res.json())
+            .then(data => {
+                setProducts(data);
+                setLoading(false); 
+            });
+    }, []);
 
     const navigate = useNavigate();
+
     const handleEdit = (id) => {
         navigate(`/dashboard/editproduct/${id}`)
-
     }
 
     const handleDelete = (id) => {
-        fetch(`https://fab-lab-server-production.up.railway.app/api/person/delete/${id}`, {
+        fetch(`https://fab-lab-server-production.up.railway.app/api/product/delete/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -25,22 +30,26 @@ const DashBoardProduct = () => {
                 console.log(result);
             });
     }
-    <BounceLoader color="#2e3094" />
+
     return (
         <div className='mb-10'>
             <div className="mx-14 flex justify-between mb-10 items-center">
                 <input className="w-1/2 h-10 rounded-[35px] mt-5 px-5 border border-black" type="text" placeholder="Search" />
                 <Link to='/dashboard/addproduct'><button className="btn btn-sm bg-[#2e3094] hover:bg-[#2e3094] text-white">Add</button></Link>
             </div>
-            <div className='grid grid-cols-2 my-5 gap-10'>
-                {
-                    Product.map((item) => (
+        
+            {loading ? (
+                <div className="flex justify-center">
+                    <BounceLoader color="#2e3094" />
+                </div>
+            ) : (
+                <div className='grid grid-cols-2 my-5 gap-10'>
+                    {products.map((item) => (
                         <button key={item.id} className="card w-96 bg-base-100 shadow-xl">
                             <figure><img src={item.image} alt=" " /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">{item.name}</h2>
                                 <p>{item.description}</p>
-
                             </div>
                             <div className=" flex justify-center w-full mb-5">
                                 <div className=" flex gap-5">
@@ -49,10 +58,9 @@ const DashBoardProduct = () => {
                                 </div>
                             </div>
                         </button>
-                    ))
-                }
-            </div>
-
+                    ))}
+                </div>
+            )}
         </div>
     );
 };
