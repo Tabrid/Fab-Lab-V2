@@ -46,7 +46,7 @@ const DashBoardEvent = () => {
             .then((data) => console.log(data))
         
     };
-<BounceLoader color="#2e3094" />
+<BounceLoader color="#2e3094"/>
     return (
         <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-4 p-4 border border-gray-300 rounded-lg">
             <div className="mb-4">
