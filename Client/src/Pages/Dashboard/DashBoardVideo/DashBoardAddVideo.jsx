@@ -10,7 +10,7 @@ const DashBoardAddVideo = () => {
         const input = {
             image: form.video.value
         };
-        fetch('http://localhost:5000/api/machine/machineries', {
+        fetch('https://fab-lab-server-production.up.railway.app/api/machine/machineries', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

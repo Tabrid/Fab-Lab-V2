@@ -20,7 +20,7 @@ const Idea = () => {
   const handleAddProduct = (data) => {
 
     console.log(data);
-    fetch('http://localhost:5000/api/idea/ideas', {
+    fetch('https://fab-lab-server-production.up.railway.app/api/idea/ideas', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

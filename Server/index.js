@@ -4,18 +4,18 @@ import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import authRoutes from "./routes/auth.routes.js";
-import userRoutes from "./routes/user.routes.js";
-import connectDB from "./DB/databaseConfigs.js";
-import researchRoutes from "./routes/research.routes.js"; // Remove curly braces for default import
-import productRoutes from "./routes/product.routes.js"
-import projectRoutes from "./routes/project.routes.js"
-import eventRoutes from "./routes/event.routes.js"
-import machineRoutes from "./routes/machine.routes.js"
-import ideaRoutes from "./routes/idea.routes.js"
-import orderRoutes from "./routes/order.routes.js"
-import membershipRoutes from "./routes/membership.routes.js"
-import personRoutes from "./routes/person.routes.js"
+import authRoutes from "./server/routes/auth.routes.js";
+import userRoutes from "./server/routes/user.routes.js";
+import connectDB from "./server/DB/databaseConfigs.js";
+import researchRoutes from "./server/routes/research.routes.js"; // Remove curly braces for default import
+import productRoutes from "./server/routes/product.routes.js"
+import projectRoutes from "./server/routes/project.routes.js"
+import eventRoutes from "./server/routes/event.routes.js"
+import machineRoutes from "./server/routes/machine.routes.js"
+import ideaRoutes from "./server/routes/idea.routes.js"
+import orderRoutes from "./server/routes/order.routes.js"
+import membershipRoutes from "./server/routes/membership.routes.js"
+import personRoutes from "./server/routes/person.routes.js"
 const app = express();
 app.use(cors());
 const PORT = process.env.PORT || 5000;

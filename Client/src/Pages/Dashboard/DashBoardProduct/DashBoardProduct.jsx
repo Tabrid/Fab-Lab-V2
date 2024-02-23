@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 const DashBoardProduct = () => {
 
     const [Product, setProduct] = useState([]);
-    fetch('http://localhost:5000/api/product/products')
+    fetch('https://fab-lab-server-production.up.railway.app/api/product/products')
         .then(res => res.json())
         .then(data => {
             setProduct(data);
@@ -16,7 +16,7 @@ const DashBoardProduct = () => {
     }
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/api/person/delete/${id}`, {
+        fetch(`https://fab-lab-server-production.up.railway.app/api/person/delete/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

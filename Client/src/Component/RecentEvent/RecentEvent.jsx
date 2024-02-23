@@ -11,7 +11,7 @@ import { useState } from 'react';
 const RecentEvent = () => {
     const [data, setData] = useState([]); // Initialize data state
     
-    fetch('http://localhost:5000/api/event/all')
+    fetch('https://fab-lab-server-production.up.railway.app/api/event/all')
         .then((response) => response.json())
         .then((data) => setData(data));
 

@@ -5,7 +5,7 @@ import './Slide.css'; // Import your CSS file
 const Slide = () => {
     const [isHovered, setIsHovered] = useState(false);
     const [data, setData] = useState({});
-    fetch('http://localhost:5000/api/event/all')
+    fetch('https://fab-lab-server-production.up.railway.app/api/event/all')
         .then(response => response.json())
         .then(data => {
             if (Array.isArray(data) && data.length > 0) {

@@ -17,7 +17,7 @@ import { useEffect, useState } from "react";
           }, []);
     
     const [data, setData] = useState([]);
-    fetch('http://localhost:5000/api/event/all')
+    fetch('https://fab-lab-server-production.up.railway.app/api/event/all')
         .then(response => response.json())
         .then(data => {
             if (Array.isArray(data) && data.length > 0) {
@@ -46,12 +46,12 @@ import { useEffect, useState } from "react";
             <div className="w-1/2 md:w-1/2 lg:w-1/2 mx-5">
                 <div className="card w-full bg-base-100  flex-col items-center justify-center">
                     <h1 className="text-5xl font-bold flex gap-5"><BsCalendar2Event className="text-[#2e3094]" /> NEWS</h1>
-                    <div className="card-body">
+                    <div className="card-body w-full">
                         {
                             data.map((event, index) => (
-                                <Link  key={index} className="flex gap-3">
-                                    <Link to={`/event/${event._id}`}>
-                                        <p className="border-black border-spacing-1 border px-3 py-2 hover:underline flex gap-2"><IoMdArrowDropright className="text-[#2e3094] text-3xl" />{event.title}</p>
+                                <Link  key={index} className="flex gap-3 w-full">
+                                    <Link to={`/event/${event._id}`} className="w-full">
+                                        <p className="border-black w-full border-spacing-1 border px-3 py-2 hover:underline flex gap-2"><IoMdArrowDropright className="text-[#2e3094] text-3xl" />{event.title}</p>
                                     </Link>
                                 </Link>
                             ))

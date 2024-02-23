@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const DashBoardMember = () => {
   const [memberships, setMemberships] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/api/membership/membership')
+    fetch('https://fab-lab-server-production.up.railway.app/api/membership/membership')
       .then(response => response.json())
       .then(data => setMemberships(data))
       .catch(error => console.error('Error fetching membership data:', error));

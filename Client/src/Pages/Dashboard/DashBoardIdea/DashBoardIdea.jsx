@@ -5,7 +5,7 @@ const DashBoardIdea = () => {
   const [memberships, setMemberships] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/idea/ideas')
+    fetch('https://fab-lab-server-production.up.railway.app/api/idea/ideas')
       .then(response => response.json())
       .then(data => setMemberships(data))
       .catch(error => console.error('Error fetching membership data:', error));

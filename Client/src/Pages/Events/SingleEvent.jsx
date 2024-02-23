@@ -10,7 +10,7 @@ const SingleEvent = () => {
     const [event , setEvent]=useState();
     const { id } = useParams();
     useEffect(() => {
-        fetch(`http://localhost:5000/api/event/${id}`)
+        fetch(`https://fab-lab-server-production.up.railway.app/api/event/${id}`)
             .then(res => res.json())
             .then(data => {
                 setEvent(data);
