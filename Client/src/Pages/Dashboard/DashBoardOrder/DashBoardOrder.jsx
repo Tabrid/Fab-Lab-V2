@@ -6,7 +6,7 @@ const DashBoardOrder = () => {
   const [orders, setOrders] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/order/orders')
+    fetch('https://fab-lab-server-production.up.railway.app/api/order/orders')
       .then(response => response.json())
       .then(data => setOrders(data))
       .catch(error => console.error('Error fetching orders data:', error));

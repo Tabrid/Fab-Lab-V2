@@ -5,7 +5,7 @@ import { BounceLoader } from 'react-spinners';
 
 const DashBoardMachine = () => {
     const [data , setData]=useState([]);
-    fetch('http://localhost:5000/api/machine/machineries')
+    fetch('https://fab-lab-server-production.up.railway.app/api/machine/machineries')
     .then(res=>res.json())
     .then(data=>{
         setData(data);

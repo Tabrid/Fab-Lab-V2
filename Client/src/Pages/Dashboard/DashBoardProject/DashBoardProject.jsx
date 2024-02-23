@@ -7,7 +7,7 @@ const DashBoardProject = () => {
 
     const [project, setProject] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
-    fetch('http://localhost:5000/api/project/projects')
+    fetch('https://fab-lab-server-production.up.railway.app/api/project/projects')
         .then(res => res.json())
         .then(data => {
             setProject(data);
@@ -27,7 +27,7 @@ const DashBoardProject = () => {
     }
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/api/person/delete/${id}`, {
+        fetch(`https://fab-lab-server-production.up.railway.app/api/person/delete/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

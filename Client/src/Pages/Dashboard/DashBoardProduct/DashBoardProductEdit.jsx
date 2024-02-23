@@ -10,7 +10,7 @@ const DashBoardProductEdit = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     console.log(id);
     useEffect(() => {
-        fetch(`http://localhost:5000/api/product/products/${id}`)
+        fetch(`https://fab-lab-server-production.up.railway.app/api/product/products/${id}`)
             .then(res => res.json())
             .then(data => {
                 setPeople(data);
@@ -19,7 +19,7 @@ const DashBoardProductEdit = () => {
     }, [id]);
     console.log(people);
     const onSubmit = (data) => {
-        fetch(`http://localhost:5000/api/product/products/${id}`, {
+        fetch(`https://fab-lab-server-production.up.railway.app/api/product/products/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

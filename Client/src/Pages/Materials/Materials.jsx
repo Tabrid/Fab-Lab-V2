@@ -19,7 +19,7 @@ const Materials = () => {
     ],
   };
   const handleAddProduct = (data) => {
-    fetch('http://localhost:5000/api/order/orders', {
+    fetch('https://fab-lab-server-production.up.railway.app/api/order/orders', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

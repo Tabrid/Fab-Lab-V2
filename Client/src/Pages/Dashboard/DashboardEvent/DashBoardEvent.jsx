@@ -35,7 +35,7 @@ const DashBoardEvent = () => {
         event.preventDefault();
         console.log({ title, image, organizedBy, venue, descriptions, category }); 
       
-            fetch('http://localhost:5000/api/event/create', {
+            fetch('https://fab-lab-server-production.up.railway.app/api/event/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -7,7 +7,7 @@ const DashBoardPeople = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/person/all')
+    fetch('https://fab-lab-server-production.up.railway.app/api/person/all')
       .then(res => res.json())
       .then(data => {
         setPeople(data.data);
@@ -32,7 +32,7 @@ const handleEdit = (id) =>{
 }
 
 const handleDelete = (id) =>{
-  fetch(`http://localhost:5000/api/person/delete/${id}`, {
+  fetch(`https://fab-lab-server-production.up.railway.app/api/person/delete/${id}`, {
     method: 'DELETE'
   })
     .then(res => res.json())

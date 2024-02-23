@@ -11,7 +11,7 @@ const DashBoardEditPeople = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/person/get/${id}`)
+        fetch(`https://fab-lab-server-production.up.railway.app/api/person/get/${id}`)
             .then(res => res.json())
             .then(data => {
                 setPeople(data.data);
@@ -20,7 +20,7 @@ const DashBoardEditPeople = () => {
     }, [id]);
 
     const onSubmit = (data) => {
-        fetch(`http://localhost:5000/api/person/update/${id}`, {
+        fetch(`https://fab-lab-server-production.up.railway.app/api/person/update/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

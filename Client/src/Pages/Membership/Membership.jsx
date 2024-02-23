@@ -62,7 +62,7 @@ const Membership = () => {
   const handleSubmit = (e) => {
     // Handle form submission
     console.log(formData);
-    fetch('http://localhost:5000/api/membership/membership', {
+    fetch('https://fab-lab-server-production.up.railway.app/api/membership/membership', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

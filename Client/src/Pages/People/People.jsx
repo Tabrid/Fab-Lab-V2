@@ -19,12 +19,15 @@ const People = () => {
   const [people, setPeople] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('ALL'); // Initialize with 'ALL'
+  const [loader, setLoader]=useState(false)
   
   useEffect(() => {
-    fetch('http://localhost:5000/api/person/all')
+    setLoader(true)
+    fetch('https://fab-lab-server-production.up.railway.app/api/person/all')
       .then(res => res.json())
       .then(data => {
         setPeople(data.data);
+        setLoader(false)
       })
   }, []);
 
@@ -41,7 +44,6 @@ const People = () => {
     person.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
     (selectedFilter === 'ALL' || person.category === selectedFilter)
   );
-<BounceLoader color="#2e3094" />
   return (
     <div>
       <Location {...Data} />
@@ -72,7 +74,8 @@ const People = () => {
         </div>
       </div>
       <div className='flex justify-center p-5 m-5'>
-        <div className='grid  lg:grid-cols-2 gap-5'>
+        {
+          loader ? <BounceLoader color="#2e3094" /> :<div className='grid  lg:grid-cols-2 gap-5'>
           {
             filteredPeople.map((person, index) => (
               <div key={index} className="card w-96 bg-base-100 shadow-xl border-slate-950 border-spacing-0.5 border">
@@ -89,6 +92,7 @@ const People = () => {
             ))
           }
         </div>
+        }
       </div>
     </div>
   );

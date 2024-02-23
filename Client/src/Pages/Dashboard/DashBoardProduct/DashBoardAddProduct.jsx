@@ -13,7 +13,7 @@ const DashBoardAddProduct = () => {
             image: form.image.value,
             description: form.description.value
         };
-        fetch('http://localhost:5000/api/product/products', {
+        fetch('https://fab-lab-server-production.up.railway.app/api/product/products', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

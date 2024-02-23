@@ -11,7 +11,7 @@ const DashBoardMachineEdit = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/machine/machineries/${id}`)
+        fetch(`https://fab-lab-server-production.up.railway.app/api/machine/machineries/${id}`)
             .then(res => res.json())
             .then(data => {
                 setPeople(data);
@@ -20,7 +20,7 @@ const DashBoardMachineEdit = () => {
     }, [id]);
 
     const onSubmit = (data) => {
-        fetch(`http://localhost:5000/api/machine/machineries/${id}`, {
+        fetch(`https://fab-lab-server-production.up.railway.app/api/machine/machineries/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
