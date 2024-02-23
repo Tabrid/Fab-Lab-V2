@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { BounceLoader } from 'react-spinners';
+import swal from 'sweetalert';
 const DashBoardProduct = () => {
 
     const [Product, setProduct] = useState([]);
@@ -17,12 +18,17 @@ const DashBoardProduct = () => {
     }
 
     const handleDelete = (id) => {
-        fetch(`https://fab-lab-server-production.up.railway.app/api/person/delete/${id}`, {
+        fetch(`https://fab-lab-server-production.up.railway.app/api/product/products/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
+                swal({
+                    title: "Good job!",
+                    text: `product is successfully deleted`,
+                    icon: "success",
+                    button: "DONE",
+                  });
             });
     }
     <BounceLoader color="#2e3094" />

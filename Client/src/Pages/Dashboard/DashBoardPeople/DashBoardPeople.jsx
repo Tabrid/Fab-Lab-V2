@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { BounceLoader } from 'react-spinners';
+import swal from 'sweetalert';
 
 const DashBoardPeople = () => {
   const [people, setPeople] = useState([]);
@@ -37,7 +38,12 @@ const handleDelete = (id) =>{
   })
     .then(res => res.json())
     .then(result => {
-      console.log(result);
+      swal({
+        title: "Good job!",
+        text: `people is successfully deleted`,
+        icon: "success",
+        button: "DONE",
+      });
     });
 }
 <BounceLoader color="#2e3094" />
