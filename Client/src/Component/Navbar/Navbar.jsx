@@ -33,15 +33,35 @@ const Navbar = () => {
                         <a
                             className="flex  items-center gap-[2px] text-base font-semibold"
                         >
-                            About Us
+                            About 
                             <span>
                                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
                             </span>
                         </a>
                         <div className="absolute mt-10 hover:bg-white hidden w-52 rounded-md h-20  p-2 text-black group-hover:block ">
                             <ul className=" bg-white w-52  -ml-2 hover:bg-white ">
-                                <Link to='/fabCharter'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Fab Charter</a></li></Link>
+                                <Link to='/fabCharter'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>FAQ</a></li></Link>
+                                
+                                <Link to='/aboutus'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>About Us</a></li></Link>
                                 <Link to='/contact'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Contact</a></li></Link>
+                            </ul>
+                        </div>
+                    </li>
+                    <li className="group relative cursor-pointer  bg-white hover:bg-white">
+                        <a
+                            className="flex  items-center gap-[2px] text-base font-semibold"
+                        >
+                            People
+                            <span>
+                                <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
+                            </span>
+                        </a>
+                        <div className="absolute mt-10 hover:bg-white  hidden w-72 rounded-md h-20  p-2 text-black group-hover:block ">
+                            <ul className=" bg-white w-72  -ml-2">
+                                <Link to='/membershipFacilities'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Advisory Panel</a></li></Link>
+                                <Link to='/machineries'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Management Committee</a></li></Link>
+                                <Link to='/our-activities'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Researcher & Innovation</a></li></Link>
+                                <Link to='/our-activities'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Student Team</a></li></Link>
                             </ul>
                         </div>
                     </li>

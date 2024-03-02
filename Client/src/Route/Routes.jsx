@@ -53,6 +53,7 @@ import DashBoardEditImage from "../Pages/Dashboard/DashBoardImage/DashBoardEditI
 import DashBoardEditVideo from "../Pages/Dashboard/DashBoardVideo/DashBoardEditVideo";
 import PrivateRoute from "./PrivateRoutes";
 import SignUp from "../Pages/SignUp/SignUp";
+import About from "../Pages/Aboutus/About";
 
  export const router = createBrowserRouter([
     {
@@ -70,6 +71,10 @@ import SignUp from "../Pages/SignUp/SignUp";
         {
           path: "/fabCharter",
           element: <FabCharter></FabCharter>,
+        },
+        {
+          path: "/aboutus",
+          element: <About></About>,
         },
         {
           path: "/people",
