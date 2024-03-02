@@ -6,47 +6,67 @@ import { BounceLoader } from 'react-spinners';
 const data = ["Heavy-Machineries", "Electronics", "Power-Tools", "Other-Tools"];
 
 const DashBoardAddMachine = () => {
-    const navigate = useNavigate();
+    const [refresh, setRefresh] = useState(false);
     const [loading, setLoading] = useState(false); 
 
     const handleSubmit = async (e) => {
-        const form = e.target;
         e.preventDefault();
-        const input = {
+        setLoading(true); // Set loading state
+      
+        try {
+          const form = e.target;
+          const input = {
             name: form.name.value,
             category: form.category.value,
-            image: form.image.value
-        };
-        setLoading(true); 
-        fetch('https://fab-lab-server-production.up.railway.app/api/machine/machineries', {
+            image: form.image.value,
+          };
+      
+          const response = await fetch('https://fab-lab-server-production.up.railway.app/api/machine/machineries', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+              'content-type': 'application/json'
             },
             body: JSON.stringify(input)
-        })
-            .then(res => res.json())
-            .then(result => {
-                setLoading(false); 
-                console.log(result);
-                if (result.error) {
-                    swal({
-                        title: "Error",
-                        text: result.error,
-                        icon: "error",
-                        button: "OK",
-                    });
-                } else {
-                    swal({
-                        title: "Good job!",
-                        text: `people is successfully added`,
-                        icon: "success",
-                        button: "DONE",
-                    });
-                    navigate('/');
-                }
-            })
-    }
+          });
+      
+          const result = await response.json();
+      
+          console.log(result);
+          setLoading(false); // Clear loading state
+      
+          if (result.error) {
+            swal({
+              title: "Error",
+              text: result.error,
+              icon: "error",
+              button: "OK",
+            });
+          } else {
+            swal({
+              title: "Good job!",
+              text: "Machine is successfully added",
+              icon: "success",
+              button: "DONE",
+            });
+      
+            // Clear the form
+            form.reset(); // Reset form fields to their initial values
+      
+            // Data refetch not possible without AuthContext
+            console.warn("AuthContext not found for data refetch. Consider implementing it for automatic updates.");
+          }
+        } catch (error) {
+          console.error("Error submitting form:", error);
+          setLoading(false); // Clear loading state
+          swal({
+            title: "Error",
+            text: "Something went wrong. Please try again.",
+            icon: "error",
+            button: "OK",
+          });
+        }
+      };
+      
 
     return (
         <div className='flex flex-col justify-center items-center '>

@@ -62,9 +62,9 @@ const DashBoardMachine = () => {
                                 <div className="card-body w-full items-center text-center border-slate-950 border-spacing-0.5 border-t">
                                     <h2 className="card-title">{item.name}</h2>
                                 </div>
-                                <div className="flex justify-between mb-5 gap-10 ml-10">
-                                    <button onClick={() => handleEdit(item._id)} className="btn btn-sm bg-[#2e3094] hover:bg-[#2e3094] text-white">Edit</button>
-                                    <button onClick={() => handleDelete(item._id)} className="btn btn-sm bg-[#2e3094] hover:bg-[#2e3094] text-white">Delete</button>
+                                <div className="flex flex-row justify-around mx-28 mb-5 gap-5 ">
+                                    <div><button onClick={() => handleEdit(item._id)} className="btn btn-sm bg-[#2e3094] hover:bg-[#2e3094] text-white">Edit</button></div>
+                                    <div><button onClick={() => handleDelete(item._id)} className="btn btn-sm bg-[#2e3094] hover:bg-[#2e3094] text-white">Delete</button></div>
                                 </div>
                             </button>
                         ))

@@ -64,7 +64,7 @@ const RecentEvent = () => {
                     {data.map((item) => (
                         <SwiperSlide key={item.id} className="bg-base-200">
                             <figure className="snip1171 shadow-2xl">
-                                <img src={item.image} alt="sample71" />
+                                <img  src={item.image} alt="sample71" />
                                 <figcaption>
                                     <h3>{formatDate(item.createdAt)}</h3>
                                     <h1 className="font-semibold">{item.title}</h1>
