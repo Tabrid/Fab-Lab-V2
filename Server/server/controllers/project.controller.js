@@ -68,3 +68,13 @@ export const deleteProject = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
+
+export const getProjectsByCategory = async (req, res) => {
+  try {
+    const { category } = req.params;
+    const projects = await Project.find({ category });
+    res.status(200).json(projects);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};

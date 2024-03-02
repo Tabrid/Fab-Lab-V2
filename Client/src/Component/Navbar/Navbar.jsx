@@ -59,7 +59,7 @@ const Navbar = () => {
                             <ul className=" bg-white w-52  -ml-2">
                                 <Link to='/membershipFacilities'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Membership Facilities</a></li></Link>
                                 <Link to='/machineries'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Machineries</a></li></Link>
-                                <Link to='/labFacilities'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Our Activites</a></li></Link>
+                                <Link to='/our-activities'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Our Activites</a></li></Link>
                             </ul>
                         </div>
                     </li>
@@ -74,8 +74,8 @@ const Navbar = () => {
                         </a>
                         <div className="absolute mt-10 hover:bg-white hidden w-52 rounded-md h-20  p-2 text-black group-hover:block ">
                             <ul className=" bg-white w-52  -ml-2">
-                                <Link to='/project'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Complete</a></li></Link>
-                                <Link to='/comingSoon'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Ongoing</a></li></Link>
+                                <Link to='/project/complete'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Complete</a></li></Link>
+                                <Link to='/project/ongoing'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Ongoing</a></li></Link>
                             </ul>
                         </div>
                     </li>
@@ -107,7 +107,7 @@ const Navbar = () => {
                         <div className="absolute mt-10 hover:bg-white hidden w-52 rounded-md h-20  p-2 text-black group-hover:block ">
                             <ul className=" bg-white w-52  -ml-2">
                                 <Link to='/events/complete'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Complete</a></li></Link>
-                                <Link to='/comingSoon'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Upcoming</a></li></Link>
+                                <Link to='/events/upcoming'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Upcoming</a></li></Link>
                             </ul>
                         </div>
                     </li>

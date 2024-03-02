@@ -1,5 +1,5 @@
 import express from "express";
-import { getAllProjects, getProjectById, createProject, updateProject, deleteProject } from '../controllers/project.controller.js';
+import { getAllProjects, getProjectById, createProject, updateProject, deleteProject,getProjectsByCategory } from '../controllers/project.controller.js';
 
 const router = express.Router();
 
@@ -17,5 +17,5 @@ router.put('/projects/:id', updateProject);
 
 // Delete project
 router.delete('/projects/:id', deleteProject);
-
+router.get("/projects/category/:category", getProjectsByCategory);
 export default router;

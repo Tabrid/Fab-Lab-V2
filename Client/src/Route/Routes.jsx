@@ -108,11 +108,11 @@ import SignUp from "../Pages/SignUp/SignUp";
           element: <Rules></Rules>,
         },
         {
-          path: "/labFacilities",
+          path: "/our-activities",
           element: <LabFacilities></LabFacilities>,
         },
         {
-          path: "/project",
+          path: "/project/:category",
           element: <Project></Project>,
         },
         {

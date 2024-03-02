@@ -69,3 +69,14 @@ export const deleteEvent = async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 };
+
+export const getEventsByCategory = async (req, res) => {
+  const { category } = req.params;
+
+  try {
+    const events = await Event.find({ category });
+    res.json(events);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
