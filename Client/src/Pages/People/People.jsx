@@ -81,7 +81,7 @@ const People = () => {
               <div key={index} className="card flex lg:flex-row md:flex-row flex-col bg-base-100  shadow-xl border-slate-950 border-spacing-0.5 border">
                 <div>
                 <figure className=" p-5 ">
-                  <img src={person.image} alt="Shoes" className="rounded-xl w-full h-[250px]" />
+                  <img src={person.image} alt="Shoes" className="rounded-full w-[150px] h-[150px] shadow-xl" />
                 </figure>
                 </div>
                 <div className="card-body items-center text-center border-slate-950 border-spacing-0.5 border-l">
