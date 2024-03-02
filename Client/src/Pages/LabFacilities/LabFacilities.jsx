@@ -17,17 +17,17 @@ const LabFacilities = () => {
 
     const labFacility = [
         {
-            img: 'https://daffodilvarsity.edu.bd/images/fablab-facility/25c244ef329649a221df332618ccd349.webp',
+            img: 'https://daffodilvarsity.edu.bd/images/lab-scope/3e1264ae3b4d681afbb68dc52f3df79d.webp',
             title: 'Workshop',
             discription: 'Workshop on using and introduction to different tools of the laboratory'
         },
         {
-            img: 'https://daffodilvarsity.edu.bd/images/fablab-facility/0e8ae7033aa55166ce7d4edd08273dc3.webp',
+            img: 'https://daffodilvarsity.edu.bd/images/lab-scope/7c4721025ac0f1c596d4f7dc6534807f.webp',
             title: 'Competition',
             discription: 'There will be numerous project competitions among the students and best projects will be awarded and sent to inter university contests'
         },
         {
-            img: 'https://daffodilvarsity.edu.bd/images/fablab-facility/4866cdcc6ed729a92446b794db89e754.webp',
+            img: 'https://daffodilvarsity.edu.bd/images/lab-scope/cb1e71240d0ea82cb71fdac25c13d26b.webp',
             title: 'Seminar',
             discription: 'Seminars on different topics about Fabrication and 4th IR '
         },

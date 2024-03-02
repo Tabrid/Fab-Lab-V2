@@ -50,7 +50,7 @@ const DashBoardAddMachine = () => {
             });
       
             // Clear the form
-            form.reset(); // Reset form fields to their initial values
+            form.reset(); 
       
             // Data refetch not possible without AuthContext
             console.warn("AuthContext not found for data refetch. Consider implementing it for automatic updates.");
