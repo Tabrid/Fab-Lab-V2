@@ -2,6 +2,7 @@ import { useState } from "react";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 import { BounceLoader } from "react-spinners";
+import { useAuthContext } from "../../../Context/AuthContext";
 
 const data = [
   "Management-Committee",
@@ -16,49 +17,69 @@ const DashBoardAddPeople = () => {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
-    setLoading(true);
-    const form = e.target;
     e.preventDefault();
-    const input = {
-      name: form.name.value,
-      department: form.department.value,
-      role: form.role.value,
-      category: form.category.value,
-      designation: form.designation.value,
-      image: form.image.value,
-    };
-    fetch("https://fab-lab-server-production.up.railway.app/api/person/add", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(input),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
-        setLoading(false);
-        if (result.error) {
-          swal({
-            title: "Error",
-            text: result.error,
-            icon: "error",
-            button: "OK",
-          });
-        } else {
-          swal({
-            title: "Good job!",
-            text: `people is successfully added`,
-            icon: "success",
-            button: "DONE",
-          });
-          navigate("/");
-        }
-      })
-      .catch((error) => {
-        console.error("Error submitting form:", error);
-        setLoading(false);
+    setLoading(true); // Set loading state
+  
+    try {
+      const form = e.target;
+      const input = {
+        name: form.name.value,
+        department: form.department.value,
+        role: form.role.value,
+        category: form.category.value,
+        designation: form.designation.value,
+        image: form.image.value,
+      };
+  
+      const response = await fetch("https://fab-lab-server-production.up.railway.app/api/person/add", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(input),
       });
+  
+      const result = await response.json();
+  
+      console.log(result);
+      setLoading(false); // Clear loading state
+  
+      if (result.error) {
+        swal({
+          title: "Error",
+          text: result.error,
+          icon: "error",
+          button: "OK",
+        });
+      } else {
+        swal({
+          title: "Good job!",
+          text: "Person is successfully added",
+          icon: "success",
+          button: "DONE",
+        });
+  
+        // Clear the form
+        form.reset(); // Reset form fields to their initial values
+  
+        // Assuming you have AuthContext for data refetch
+        if (useAuthContext) { // Check if AuthContext is available
+          const { setRefresh } = useAuthContext();
+          setRefresh(true); // Trigger data refetch
+        } else {
+          console.warn("AuthContext not found for data refetch");
+        }
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setLoading(false); // Clear loading state
+      swal({
+        title: "Error",
+        text: "Something went wrong. Please try again.",
+        icon: "error",
+        button: "OK",
+      });
+    }
   };
 
   return (

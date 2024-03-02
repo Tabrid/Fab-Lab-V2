@@ -44,7 +44,11 @@ const Events = () => {
           <div className="flex justify-center items-center">
             <BounceLoader color="#2e3094" />
           </div>
-        ) : (
+        ) :   data.length === 0 ? ( // Render message when data array is empty
+        <div className="text-center text-2xl w-44   text-black border-spacing-1 shadow-2xl bg-slate-200 font-semibold">
+            No data found.
+        </div>
+    ) :(
           <div className="w-full bg-base-200 flex  justify-center items-center py-16">
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 ">
               {data.map((item) => (

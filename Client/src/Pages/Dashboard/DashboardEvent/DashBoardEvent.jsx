@@ -1,12 +1,15 @@
-import { useState } from "react";
+import {  useState } from "react";
 import swal from "sweetalert";
+
+
 const DashBoardEvent = () => {
+    const [refresh, setRefresh] = useState(false);
     const [title, setTitle] = useState('');
     const [image, setImage] = useState('');
     const [organizedBy, setOrganizedBy] = useState('');
     const [venue, setVenue] = useState('');
     const [descriptions, setDescriptions] = useState([{ keypoint: '', tasks: [''] }]);
-    const [category, setCategory] = useState('upcoming'); // Initialize category state
+    const [category, setCategory] = useState('upcoming'); 
 
     const handleDescriptionChange = (index, key, value) => {
         const updatedDescriptions = [...descriptions];
@@ -30,39 +33,60 @@ const DashBoardEvent = () => {
         setDescriptions(updatedDescriptions);
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log({ title, image, organizedBy, venue, descriptions, category }); 
       
-            fetch('http://localhost:5000/api/event/create', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ title, image, organizedBy, venue, descriptions, category }),
-            })
-            .then((response) => response.json())
-            .then((data) => {
-                if (data.error) {
-                    swal({
-                      title: "Error",
-                      text: data.error,
-                      icon: "error",
-                      button: "OK",
-                    });
-                  } else {
-                    swal({
-                      title: "Good job!",
-                      text: `Event is successfully added`,
-                      icon: "success",
-                      button: "DONE",
-                    });
-            }
-        })
-        
-    };
+        try {
+          const response = await fetch('http://localhost:5000/api/event/create', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ title, image, organizedBy, venue, descriptions, category }),
+          });
+      
+          const data = await response.json();
+      
+          if (data.error) {
+            swal({
+              title: "Error",
+              text: data.error,
+              icon: "error",
+              button: "OK",
+            });
+          } else {
+            swal({
+              title: "Good job!",
+              text: `Event is successfully added`,
+              icon: "success",
+              button: "DONE",
+            });
+      
+           
+            setTitle('');
+            setImage('');
+            setOrganizedBy('');
+            setVenue('');
+            setDescriptions([{ keypoint: '', tasks: [''] }]);
+            setCategory('upcoming'); 
+      
+           
+            setRefresh(true);
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          swal({
+            title: "Error",
+            text: "Something went wrong. Please try again.",
+            icon: "error",
+            button: "OK",
+          });
+        }
+      };
 
     return (
+        <div>
+        {refresh && <p>Data refreshed!</p>}
         <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-4 p-4 border border-gray-300 rounded-lg">
             <div className="mb-4">
                 <label className="block mb-1">Title:</label>
@@ -114,7 +138,8 @@ const DashBoardEvent = () => {
                 </div>
             ))}
             <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded-md">Submit</button>
-        </form>
+            </form>
+            </div>
     );
 };
 
