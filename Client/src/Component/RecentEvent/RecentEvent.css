@@ -19,6 +19,7 @@ figure.snip1171 * {
 }
 figure.snip1171 img {
   max-width: 100%;
+  max-height: 220px;
   vertical-align: top;
 }
 figure.snip1171 figcaption {
