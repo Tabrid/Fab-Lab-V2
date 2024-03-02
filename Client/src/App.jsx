@@ -3,7 +3,7 @@ RouterProvider,
 } from "react-router-dom";
 import { router } from './Route/Routes';
 import { useEffect, useState } from "react";
-
+import{ Toaster } from 'react-hot-toast';
 function App() {
   const [showLoader, setShowLoader] = useState(true);
 
@@ -25,7 +25,10 @@ function App() {
                 <div className="loader" style={{ border: '8px solid #f3f3f3', borderRadius: '50%', borderTop: '8px solid #3498db', width: 80, height: 80, animation: 'spin 2s linear infinite' }}></div>
             </div>
         ) : (
-          <RouterProvider router={router} />
+          <div>
+            <Toaster />
+            <RouterProvider router={router} />
+          </div>
         )
       }
       

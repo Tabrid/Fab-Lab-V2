@@ -36,7 +36,7 @@ const DashBoardProject = () => {
     }
 
     const handleDelete = (id) => {
-        fetch(`https://fab-lab-server-production.up.railway.app/api/project/delete/${id}`, {
+        fetch(`https://fab-lab-server-production.up.railway.app/api/project/projects/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

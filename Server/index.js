@@ -16,6 +16,8 @@ import ideaRoutes from "./server/routes/idea.routes.js"
 import orderRoutes from "./server/routes/order.routes.js"
 import membershipRoutes from "./server/routes/membership.routes.js"
 import personRoutes from "./server/routes/person.routes.js"
+import imageRoutes from "./server/routes/image.routes.js"
+import videoRoutes from "./server/routes/video.routes.js"
 const app = express();
 app.use(cors());
 const PORT = process.env.PORT || 5000;
@@ -36,6 +38,8 @@ app.use('/api/idea', ideaRoutes);
 app.use('/api/order', orderRoutes);
 app.use('/api/membership', membershipRoutes);
 app.use('/api/person', personRoutes);
+app.use('/api', imageRoutes);
+app.use('/api', videoRoutes);
 
 app.get("/", (req, res) => {
   res.send("Server Running");

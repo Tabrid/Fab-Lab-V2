@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import { BounceLoader } from 'react-spinners';
+import swal from 'sweetalert';
 
 const DashBoardEditImage = () => {
     const [people, setPeople] = useState({});
@@ -11,27 +12,49 @@ const DashBoardEditImage = () => {
 
     useEffect(() => {
         setLoading(true); 
-        fetch(`https://fab-lab-server-production.up.railway.app/api/product/products/${id}`)
+        fetch(`https://fab-lab-server-production.up.railway.app/api/images/${id}`)
             .then(res => res.json())
             .then(data => {
                 setPeople(data);
                 setLoading(false); 
+                console.log(data);
             });
     }, [id]);
 
     const onSubmit = (data) => {
         setLoading(true); 
-        fetch(`https://fab-lab-server-production.up.railway.app/api/product/products/${id}`, {
+        fetch(`https://fab-lab-server-production.up.railway.app/api/images/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(data)
         })
-            .then(res => res.json())
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error("Failed to update image.");
+                }
+                return res.json();
+            })
             .then(result => {
                 console.log(result);
                 setLoading(false); 
+                swal({
+                    title: "Success",
+                    text: "Image updated successfully",
+                    icon: "success",
+                    button: "OK",
+                });
+            })
+            .catch(error => {
+                console.error('Error updating image:', error);
+                setLoading(false);
+                swal({
+                    title: "Error",
+                    text: "Failed to update image. Please try again later.",
+                    icon: "error",
+                    button: "OK",
+                });
             });
     };
 

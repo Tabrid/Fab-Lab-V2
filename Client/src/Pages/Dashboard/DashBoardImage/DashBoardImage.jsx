@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { BounceLoader } from "react-spinners";
+import swal from "sweetalert";
 
 const DashBoardImage = () => {
     const [data, setData] = useState([]);
@@ -9,11 +10,12 @@ const DashBoardImage = () => {
 
     useEffect(() => {
         setLoading(true); 
-        fetch("https://fab-lab-server-production.up.railway.app/api/person/all")
+        fetch("https://fab-lab-server-production.up.railway.app/api/images")
             .then((res) => res.json())
             .then((data) => {
                 setData(data);
                 setLoading(false); 
+                console.log(data);
             })
             .catch((error) => {
                 console.error("Error fetching data:", error);
@@ -26,12 +28,12 @@ const DashBoardImage = () => {
     };
 
     const handleDelete = (id) => {
-        fetch(`https://fab-lab-server-production.up.railway.app/api/person/delete/${id}`, {
+        fetch(`http://localhost:5000/api/images/${id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())
             .then((result) => {
-                console.log(result);
+                swal("Image Deleted Successfully!")
             });
     };
 
@@ -49,9 +51,9 @@ const DashBoardImage = () => {
                             <BounceLoader color="#2e3094" />
                         </div>
                     ) : (
-                        data.map((item) => (
+                        data?.map((item) => (
                             <div key={item._id} className="card border border-black p-5">
-                                <img src={item.img} alt="" />
+                                <img src={item.image} alt="" />
                                 <div className="flex justify-center w-full mb-5">
                                     <div className="flex gap-5 mt-5">
                                         <button onClick={() => handleEdit(item._id)} className="btn btn-sm bg-[#2e3094] hover:bg-[#2e3094] text-white">Edit</button>

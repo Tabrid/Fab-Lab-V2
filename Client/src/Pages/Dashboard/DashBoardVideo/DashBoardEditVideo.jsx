@@ -1,7 +1,7 @@
 import  { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
-import { BounceLoader } from 'react-spinners';
+import swal from 'sweetalert';
 
 
 const DashBoardEditVideo = () => {
@@ -10,15 +10,16 @@ const DashBoardEditVideo = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     console.log(id);
     useEffect(() => {
-        fetch(`https://fab-lab-server-production.up.railway.app/api/product/products/${id}`)
+        fetch(`https://fab-lab-server-production.up.railway.app/api/videos/${id}`)
             .then(res => res.json())
             .then(data => {
                 setPeople(data);
+                console.log(data);
 
             });
     }, [id]);
     const onSubmit = (data) => {
-        fetch(`https://fab-lab-server-production.up.railway.app/api/product/products/${id}`, {
+        fetch(`https://fab-lab-server-production.up.railway.app/api/videos/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -27,19 +28,18 @@ const DashBoardEditVideo = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
+                swal({ title: "Good job!", text: `video is successfully updated`, icon: "success", button: "DONE", });
             });
     };
-<BounceLoader color="#2e3094" />
     return (
         <div className='flex flex-col justify-center items-center '>
             <h1 className="font-bold text-3xl my-10">Update Video</h1>
             <div className="w-1/2">
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 flex flex-col justify-center items-center">
                     
-                    <input type="url" {...register('video')} placeholder="video" className="border border-gray-300 rounded-md px-3 py-2 input input-bordered w-full max-w-x" defaultValue={people?.video} />
-                    {errors.video && (
-                        <p className="text-red-600">{errors.video?.message}</p>
+                    <input type="url" {...register('url')} placeholder="video" className="border border-gray-300 rounded-md px-3 py-2 input input-bordered w-full max-w-x" defaultValue={people?.url} />
+                    {errors.url && (
+                        <p className="text-red-600">{errors.url?.message}</p>
                     )}
                     <br />
                     

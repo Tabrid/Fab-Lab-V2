@@ -1,12 +1,12 @@
-import { useContext } from 'react';
+// Desc: Private Routes for authenticated users 
 import { Navigate } from 'react-router-dom';
-import { AuthContext } from '../Context/UserContext';
+import { useAuthContext } from '../Context/AuthContext';
 
 
 
 const PrivateRoute = ({children}) => {
-    const {user ,loading} = useContext(AuthContext);
-    if (user && user.uid) {
+    const { authUser } = useAuthContext();
+    if (authUser) {
         return children;
     }
     return <Navigate to='/login'></Navigate>

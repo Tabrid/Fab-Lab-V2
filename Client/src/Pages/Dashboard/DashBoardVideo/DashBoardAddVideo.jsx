@@ -9,9 +9,9 @@ const DashBoardAddVideo = () => {
         const form = e.target;
         e.preventDefault();
         const input = {
-            image: form.video.value
+            url: form.video.value
         };
-        fetch('https://fab-lab-server-production.up.railway.app/api/machine/machineries', {
+        fetch('https://fab-lab-server-production.up.railway.app/api/videos', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

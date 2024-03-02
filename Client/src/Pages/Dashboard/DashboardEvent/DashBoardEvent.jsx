@@ -1,6 +1,5 @@
 import { useState } from "react";
-
-
+import swal from "sweetalert";
 const DashBoardEvent = () => {
     const [title, setTitle] = useState('');
     const [image, setImage] = useState('');
@@ -43,7 +42,23 @@ const DashBoardEvent = () => {
                 body: JSON.stringify({ title, image, organizedBy, venue, descriptions, category }),
             })
             .then((response) => response.json())
-            .then((data) => console.log(data))
+            .then((data) => {
+                if (data.error) {
+                    swal({
+                      title: "Error",
+                      text: data.error,
+                      icon: "error",
+                      button: "OK",
+                    });
+                  } else {
+                    swal({
+                      title: "Good job!",
+                      text: `Event is successfully added`,
+                      icon: "success",
+                      button: "DONE",
+                    });
+            }
+        })
         
     };
 

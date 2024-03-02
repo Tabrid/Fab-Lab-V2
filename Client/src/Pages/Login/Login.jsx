@@ -1,53 +1,46 @@
-import { useContext } from "react";
-import {  useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../Context/UserContext";
-import { BounceLoader } from "react-spinners";
+import { Link } from "react-router-dom";
+import useLogin from "../../Hooks/useLogin";
 
 
 const Login = () => {
-    const { signIn, LoginWithGoogle } = useContext(AuthContext);
-
-    const navigate = useNavigate();
-    const location = useLocation()
-    const from = location.state?.from?.pathname || '/dashboard';
-
-
-    const handleSubmit = (event) => {
+    const {  login } = useLogin();
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const form = event.target;
-        const email = form.email.value;
+        const username = form.username.value;
         const password = form.password.value;
+       
+         await login(username, password );
 
-        signIn(email, password)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-                form.reset();
-                navigate(from, { replace: true })
-            })
-            .catch(error => console.error(error));
-    }
-
-    
-    <BounceLoader color="#2e3094" />
-    return (
-        <div className='flex justify-center  my-9'>
-            <div className="card w-96 shadow-2xl ">
+    };
+  return (
+    <div className="flex justify-center items-center  min-h-screen">
+            <div className="card w-1/2  shadow-2xl">
                 <div className="card-body items-center text-center">
-                    <h1 className='text-2xl font-bold text-white'>LOGIN</h1>
+                    <h1 className="text-2xl font-bold ">Login</h1>
                     <form onSubmit={handleSubmit}>
-                        <input type="email" name='email' placeholder="Type Email" className="input  mt-10 input-bordered w-full max-w-xs" />
-                        <input type="password" name='password' placeholder="Type Password" className="input mt-10 input-bordered w-full max-w-xs" />
-
-                        <input className='btn  mt-10' type="submit" value="LogIn" />
+                        
+                        <input
+                            type="text"
+                            name="username"
+                            placeholder="User Name"
+                            className="input mt-5 input-bordered w-full max-w-xs"
+                            required
+                        />
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            className="input mt-5 input-bordered w-full max-w-xs"
+                            required
+                        />
+                       
+                        <input className="btn mt-10 w-full max-w-xs" type="submit" value="LogIn" />
                     </form>
-                    
-
                 </div>
             </div>
-
         </div>
-    );
-};
+  )
+}
 
-export default Login;
+export default Login

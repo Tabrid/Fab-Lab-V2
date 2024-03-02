@@ -52,6 +52,7 @@ import DashBoardAddImage from "../Pages/Dashboard/DashBoardImage/DashBoardAddIma
 import DashBoardEditImage from "../Pages/Dashboard/DashBoardImage/DashBoardEditImage";
 import DashBoardEditVideo from "../Pages/Dashboard/DashBoardVideo/DashBoardEditVideo";
 import PrivateRoute from "./PrivateRoutes";
+import SignUp from "../Pages/SignUp/SignUp";
 
  export const router = createBrowserRouter([
     {
@@ -137,6 +138,10 @@ import PrivateRoute from "./PrivateRoutes";
         {
           path: "/news/:id",
           element: <SingleNews></SingleNews>,
+        },
+        {
+          path: "/signup",
+          element: <SignUp/> ,
         }
 
       ],

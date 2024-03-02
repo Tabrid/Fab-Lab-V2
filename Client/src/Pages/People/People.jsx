@@ -78,11 +78,13 @@ const People = () => {
           loader ? <BounceLoader color="#2e3094"/> :<div className='grid  lg:grid-cols-2 gap-5'>
           {
             filteredPeople.map((person, index) => (
-              <div key={index} className="card w-96 bg-base-100 shadow-xl border-slate-950 border-spacing-0.5 border">
+              <div key={index} className="card flex lg:flex-row md:flex-row flex-col bg-base-100  shadow-xl border-slate-950 border-spacing-0.5 border">
+                <div>
                 <figure className=" p-5 ">
                   <img src={person.image} alt="Shoes" className="rounded-xl w-full h-[250px]" />
                 </figure>
-                <div className="card-body items-center text-center border-slate-950 border-spacing-0.5 border-t">
+                </div>
+                <div className="card-body items-center text-center border-slate-950 border-spacing-0.5 border-l">
                   <h2 className="card-title">{person.name}</h2>
                   <h2 className="">{person.designation}</h2>
                   <h2 className="">{person.department}</h2>

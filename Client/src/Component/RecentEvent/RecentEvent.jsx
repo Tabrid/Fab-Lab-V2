@@ -16,7 +16,8 @@ const RecentEvent = () => {
         fetch('https://fab-lab-server-production.up.railway.app/api/event/all')
             .then((response) => response.json())
             .then((data) => {
-                setData(data);
+                const EventData = data.reverse();
+                setData(EventData);
                 setLoading(false); // Set loading to false after data is fetched
             });
     }, []); // Empty dependency array ensures effect only runs once on component mount

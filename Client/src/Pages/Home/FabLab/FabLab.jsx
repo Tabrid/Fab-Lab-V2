@@ -22,7 +22,8 @@ import { BounceLoader } from "react-spinners";
         .then(response => response.json())
         .then(data => {
             if (Array.isArray(data) && data.length > 0) {
-                const firstSixObjects = data.slice(0, 6);
+                const EventData = data.reverse();
+                const firstSixObjects = EventData.slice(0, 6);
                 // Do whatever you need with the first six objects
                 setData(firstSixObjects);
             } else {

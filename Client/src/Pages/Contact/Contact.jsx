@@ -28,7 +28,7 @@ const Contact = () => {
           </div>
           <div className="text-center border-spacing-0.5 border-gray-700 border-t my-10">
             <h1 className="mt-5 font-semibold text-3xl"> Meet Us At</h1>
-            <h1 className="mt-5 font-semibold text-2xl">DIU FABLAB & INNOVATION LAB</h1>
+            <h1 className="mt-5 font-semibold text-2xl">DIU FABLAB  LAB</h1>
             <h1 className="mt-5 text-xl">Daffodil International University</h1>
           </div>
         </div>

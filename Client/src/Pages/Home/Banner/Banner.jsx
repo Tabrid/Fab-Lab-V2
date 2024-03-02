@@ -15,7 +15,7 @@ const Banner = () => {
       }, []);
 
     return (
-        <div className="hero lg:mt-10 sm:  bg-base-200" data-aos="fade-left">
+        <div className="hero   bg-base-200" data-aos="fade-left">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="w-full lg:w-1/2">
                     <img src="https://i.ibb.co/ZLsSfQ3/manifesto-fablab-milano1-orig-removebg.png" className="w-full" />
