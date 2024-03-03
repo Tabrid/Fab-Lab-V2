@@ -54,8 +54,9 @@ import DashBoardEditVideo from "../Pages/Dashboard/DashBoardVideo/DashBoardEditV
 import PrivateRoute from "./PrivateRoutes";
 import SignUp from "../Pages/SignUp/SignUp";
 import About from "../Pages/Aboutus/About";
-import Research from "../Component/ResearchPaper/Research";
 import Awards from "../Component/Awards/Awards";
+import Research from "../Pages/Research/Research";
+import Award from "../Pages/Award/Award";
 
  export const router = createBrowserRouter([
     {
@@ -79,8 +80,8 @@ import Awards from "../Component/Awards/Awards";
           element: <About></About>,
         },
         {
-          path: "/research",
-          element: <Research></Research>,
+          path: "/research/:category",
+          element: <Research></Research> ,
         },
         {
           path: "/people/:category",
@@ -157,6 +158,10 @@ import Awards from "../Component/Awards/Awards";
         {
           path: "/signup",
           element: <SignUp/> ,
+        },
+        {
+          path: "/award",
+          element: <Award/> ,
         }
 
       ],

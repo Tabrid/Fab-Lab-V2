@@ -146,7 +146,7 @@ const Navbar = () => {
                             <div>
                                 <div className="card bg-base-100  w-80">
                                     <div className="card-body grid grid-cols-2 gap-10">
-                                        <Link to='/product'>
+                                        <Link to='/award'>
                                             <div className="btn -ml-6 bg-white border-0 hover:bg-white">
                                                 <FaTrophy />
                                                 <h2 className="font-bold text-lg">Awards &<br /> Recognition</h2>

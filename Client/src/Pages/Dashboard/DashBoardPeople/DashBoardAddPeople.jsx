@@ -31,7 +31,7 @@ const DashBoardAddPeople = () => {
         image: form.image.value,
       };
   
-      const response = await fetch("https://fab-lab-server-production.up.railway.app/api/person/add", {
+      const response = await fetch("http://localhost:5000/api/person/add", {
         method: "POST",
         headers: {
           "content-type": "application/json",

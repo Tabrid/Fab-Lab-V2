@@ -1,33 +1,18 @@
-// research.js
+import mongoose from 'mongoose';
 
-import mongoose from "mongoose";
+const researchSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+  authors: [{ 
+    name: String, 
+    image: String, 
+    designation: String 
+  }],
+  category: { type: String, enum: ['ongoing', 'complete'], required: true },
+  deadline: { type: Date, },
+  publishedDate: { type: Date, }
+});
 
-const researchSchema = new mongoose.Schema(
-  {
-    author: {
-      type: String,
-      required: true,
-    },
-    title: {
-      type: String,
-      required: true,
-    },
-    // image: {
-    //   type: String,
-    //   required: true,
-    // },
-    description: {
-      type: String,
-      required: true,
-    },
-    details: {
-      type: String,
-      required: true,
-    },
-  },
-  { timestamps: true }
-);
-
-const Research = mongoose.model("Research", researchSchema);
+const Research = mongoose.model('Research', researchSchema);
 
 export default Research;

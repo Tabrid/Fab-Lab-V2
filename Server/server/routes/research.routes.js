@@ -1,23 +1,15 @@
-// researchRoutes.js
-import express from "express";
-import { getAllResearch, getResearchById, createResearch, updateResearch, deleteResearch } from '../controllers/research.controller.js';
+import express from 'express';
+import { createResearch, getAllResearch, getResearchByCategory } from '../controllers/research.controller.js';
 
 const router = express.Router();
 
-
-// Get all research
-router.get('/research', getAllResearch);
-
-// Get research by ID
-router.get('/research/:id', getResearchById);
-
-// Create new research
+// POST request to create new research
 router.post('/research', createResearch);
 
-// Update research
-router.put('/research/:id', updateResearch);
+// GET request to get all research
+router.get('/research', getAllResearch);
 
-// Delete research
-router.delete('/research/:id', deleteResearch);
+// GET request to get research by category
+router.get('/research/category/:category', getResearchByCategory);
 
 export default router;
