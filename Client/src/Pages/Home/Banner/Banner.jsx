@@ -37,27 +37,25 @@ const Banner = () => {
                         navigation={true}
                         modules={[Autoplay, Pagination, Navigation]}
                         className="mySwiper"
-                    >
-                        <SwiperSlide>
-                            <img src="https://i.ibb.co/F40XDhY/image.png" alt=""  />
-                        </SwiperSlide>
-                        <SwiperSlide><img src="https://i.ibb.co/F40XDhY/image.png" alt=""  className="h-4/6" /></SwiperSlide>
+                    ><SwiperSlide><img src="https://i.ibb.co/XD43qk9/photo-2024-03-03-19-15-21.jpg" alt=""  className="h-4/6" /></SwiperSlide>
+                        
+                        
+                        <SwiperSlide><img src="https://i.ibb.co/0J5J36L/photo-2024-03-03-19-15-14-1.jpg" alt=""  /></SwiperSlide>
                         <SwiperSlide><img src="https://i.ibb.co/F40XDhY/image.png" alt=""  /></SwiperSlide>
-                        <SwiperSlide><img src="https://i.ibb.co/F40XDhY/image.png" alt=""  /></SwiperSlide>
-                        <SwiperSlide><img src="https://i.ibb.co/F40XDhY/image.png" alt=""  /></SwiperSlide>
-                        <SwiperSlide><img src="https://i.ibb.co/F40XDhY/image.png" alt=""  /></SwiperSlide>
-                        <SwiperSlide><img src="https://i.ibb.co/F40XDhY/image.png" alt=""  /></SwiperSlide>
-                        <SwiperSlide><img src="https://i.ibb.co/F40XDhY/image.png" alt=""  /></SwiperSlide>
-                        <SwiperSlide><img src="https://i.ibb.co/F40XDhY/image.png" alt=""  /></SwiperSlide>
+                        <SwiperSlide><img src="https://i.ibb.co/4F7ZfSP/photo-2024-03-03-19-15-06.jpg" alt=""  /></SwiperSlide>
+                       
+                        
                     </Swiper>
                 </div>
                 <div className="w-full lg:w-1/2" data-aos="fade-right">
                     <h1 className="text-5xl font-bold ml-5 mb-10">
                         <span className="text-[#2e3094]">FABLAB</span> DIU
                         <br />
-                        <span className="mt-3 text-3xl">Unleash Your Creativity</span>
+                        <span className="mt-3 text-3xl">Unleash Your Creativity</span><br/>
+                        <span className="mt-3 text-base">Learning how to make anything for innovation & industrial use.</span>
                     </h1>
-                    <Link to='/rules'><Button name='More About Us' ></Button></Link>
+                    
+                    <Link><Button name='Join Us' navigation="/membership" ></Button></Link>
                 </div>
 
             </div>

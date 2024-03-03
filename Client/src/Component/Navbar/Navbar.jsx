@@ -42,9 +42,10 @@ const Navbar = () => {
                         </a>
                         <div className="absolute mt-10 hover:bg-white hidden w-52 rounded-md h-20  p-2 text-black group-hover:block ">
                             <ul className=" bg-white w-52  -ml-2 hover:bg-white ">
-                                <Link to='/fabCharter'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>FAQ</a></li></Link>
+                                
 
                                 <Link to='/aboutus'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>About Us</a></li></Link>
+                                <Link to='/fabCharter'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>FAQ</a></li></Link>
                                 <Link to='/contact'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Contact</a></li></Link>
                             </ul>
                         </div>
