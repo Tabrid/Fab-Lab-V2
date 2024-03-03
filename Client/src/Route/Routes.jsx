@@ -77,7 +77,7 @@ import About from "../Pages/Aboutus/About";
           element: <About></About>,
         },
         {
-          path: "/people",
+          path: "/people/:category",
           element: <People></People>,
         },
         {

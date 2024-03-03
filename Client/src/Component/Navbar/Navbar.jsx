@@ -5,6 +5,7 @@ import { FcIdea, FcRules } from "react-icons/fc";
 import { FiBox } from "react-icons/fi";
 import { FaCaretDown } from "react-icons/fa";
 const Navbar = () => {
+    
     return (
         <div className="navbar bg-base-100 sticky z-20 top-0  px-10">
             <div className="navbar-start">
@@ -58,14 +59,13 @@ const Navbar = () => {
                         </a>
                         <div className="absolute mt-10 hover:bg-white  hidden w-72 rounded-md h-20  p-2 text-black group-hover:block ">
                             <ul className=" bg-white w-72  -ml-2">
-                                <Link to='/membershipFacilities'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Advisory Panel</a></li></Link>
-                                <Link to='/machineries'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Management Committee</a></li></Link>
-                                <Link to='/our-activities'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Researcher & Innovation</a></li></Link>
-                                <Link to='/our-activities'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Student Team</a></li></Link>
+                                <Link to='/people/Advisory-Panel'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Advisory Panel</a></li></Link>
+                                <Link to='/people/Management-Committee'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Management Committee</a></li></Link>
+                                <Link to='/people/Researchers'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Researcher & Innovation</a></li></Link>
+                                <Link to='/people/Student-Team'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Student Team</a></li></Link>
                             </ul>
                         </div>
                     </li>
-                    <Link to='/people'><li className="text-base font-semibold hover:bg-base-100"><a>People</a></li></Link>
                     <li className="group relative cursor-pointer  bg-white hover:bg-white">
                         <a
                             className="flex  items-center gap-[2px] text-base font-semibold"
@@ -87,7 +87,7 @@ const Navbar = () => {
                         <a
                             className="flex  items-center gap-[2px] text-base font-semibold"
                         >
-                            Project
+                            Projects
                             <span>
                                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
                             </span>

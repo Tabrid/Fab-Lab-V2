@@ -38,7 +38,7 @@ const Contact = () => {
           </div>
           <div className="text-center border-spacing-0.5 border-gray-700 border-t my-10">
             <h1 className="mt-5 font-semibold text-3xl"> Phone Number</h1>
-            <h1 className="mt-5 font-semibold text-2xl">+880 1*************</h1>
+            <h1 className="mt-5 font-semibold text-2xl">TBA</h1>
           </div>
         </div>
         <div className="border-spacing-0.5 border-gray-700 border rounded-lg bg-base-200">
