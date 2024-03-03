@@ -4,8 +4,9 @@ import { FaBoxOpen, FaPhotoVideo } from "react-icons/fa";
 import { FcIdea, FcRules } from "react-icons/fc";
 import { FiBox } from "react-icons/fi";
 import { FaCaretDown } from "react-icons/fa";
+import { FaTrophy } from "react-icons/fa";
 const Navbar = () => {
-    
+
     return (
         <div className="navbar bg-base-100 sticky z-20 top-0  px-10">
             <div className="navbar-start">
@@ -34,7 +35,7 @@ const Navbar = () => {
                         <a
                             className="flex  items-center gap-[2px] text-base font-semibold"
                         >
-                            About 
+                            About
                             <span>
                                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
                             </span>
@@ -42,7 +43,7 @@ const Navbar = () => {
                         <div className="absolute mt-10 hover:bg-white hidden w-52 rounded-md h-20  p-2 text-black group-hover:block ">
                             <ul className=" bg-white w-52  -ml-2 hover:bg-white ">
                                 <Link to='/fabCharter'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>FAQ</a></li></Link>
-                                
+
                                 <Link to='/aboutus'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>About Us</a></li></Link>
                                 <Link to='/contact'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Contact</a></li></Link>
                             </ul>
@@ -110,8 +111,8 @@ const Navbar = () => {
                         </a>
                         <div className="absolute mt-10 hover:bg-white  hidden w-52 rounded-md h-20  p-2 text-black group-hover:block ">
                             <ul className=" bg-white w-52  -ml-2">
-                                <Link to='/comingSoon'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Published</a></li></Link>
-                                <Link to='/comingSoon'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Ongoing</a></li></Link>
+                                <Link to='/research/published'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Published</a></li></Link>
+                                <Link to='/research/ongoing'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Ongoing</a></li></Link>
                             </ul>
                         </div>
                     </li>
@@ -145,6 +146,11 @@ const Navbar = () => {
                             <div>
                                 <div className="card bg-base-100  w-80">
                                     <div className="card-body grid grid-cols-2 gap-10">
+                                        <Link to='/product'>
+                                            <div className="btn -ml-6 bg-white border-0 hover:bg-white">
+                                                <FaTrophy />
+                                                <h2 className="font-bold text-lg">Awards &<br /> Recognition</h2>
+                                            </div></Link>
                                         <Link to='/image'>
                                             <div className="btn bg-white border-0 hover:bg-white">
                                                 <BsImage />
@@ -153,7 +159,7 @@ const Navbar = () => {
                                         </Link>
 
                                         <Link to='/order'>
-                                            <div className="btn bg-white border-0 hover:bg-white">
+                                            <div className="btn  bg-white border-0 hover:bg-white">
                                                 <FaBoxOpen />
                                                 <h2 className="font-bold text-lg">Make Order</h2>
                                             </div>
@@ -181,6 +187,10 @@ const Navbar = () => {
                                                 <FiBox />
                                                 <h2 className="font-bold text-lg">Our Product</h2>
                                             </div></Link>
+
+                                        <Link className="w-10">
+
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
