@@ -15,12 +15,20 @@ const Navbar = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a>Item 1</a></li>
-                        <li>
-                            <a>Parent</a>
-
-                        </li>
-                        <li><a>Item 3</a></li>
+                    <Link to='/'><li className="text-base font-semibold hover:bg-base-100"><a>Home</a></li></Link>
+                    <Link to='/aboutus'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>About Us</a></li></Link>
+                                <Link to='/fabCharter'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>FAQ</a></li></Link>
+                        <Link to='/contact'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Contact</a></li></Link>
+                        <Link to='/people/Advisory-Panel'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Advisory Panel</a></li></Link>
+                                <Link to='/people/Management-Committee'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Managory Panel</a></li></Link>
+                        <Link to='/people/Student-Team'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Team</a></li></Link>
+                        <Link to='/membershipFacilities'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Membership Facilities</a></li></Link>
+                                <Link to='/machineries'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Machineries</a></li></Link>
+                        <Link to='/our-activities'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Our Activites</a></li></Link>
+                        <Link to='/project/complete'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Complete Project</a></li></Link>
+                        <Link to='/project/ongoing'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Ongoing Project</a></li></Link>
+                        <Link to='/events/complete'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Completed Events</a></li></Link>
+                                <Link to='/events/upcoming'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Upcoming Events</a></li></Link>
                     </ul>
                 </div>
                 <Link to="/" className="btn btn-ghost">
@@ -95,8 +103,8 @@ const Navbar = () => {
                         </a>
                         <div className="absolute mt-10 hover:bg-white hidden w-52 rounded-md h-20  p-2 text-black group-hover:block ">
                             <ul className=" bg-white w-52  -ml-2">
-                                <Link to='/project/complete'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Complete</a></li></Link>
-                                <Link to='/project/ongoing'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Ongoing</a></li></Link>
+                                <Link to='/project/complete'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Completed Project</a></li></Link>
+                                <Link to='/project/ongoing'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Ongoing Project</a></li></Link>
                             </ul>
                         </div>
                     </li>
