@@ -59,7 +59,7 @@ const Navbar = () => {
                                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
                             </span>
                         </a>
-                        <div className="absolute mt-10 hover:bg-white  hidden w-72 rounded-md h-20  p-2 text-black group-hover:block ">
+                        <div className="absolute mt-10 hover:bg-white  hidden  rounded-md h-20  p-2 text-black group-hover:block ">
                             <ul className=" bg-white w-72  -ml-2">
                                 <Link to='/people/Advisory-Panel'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Advisory Panel</a></li></Link>
                                 <Link to='/people/Management-Committee'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Managory Panel</a></li></Link>
@@ -109,10 +109,10 @@ const Navbar = () => {
                                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
                             </span>
                         </a>
-                        <div className="absolute mt-10 hover:bg-white  hidden w-52 rounded-md h-20  p-2 text-black group-hover:block ">
-                            <ul className=" bg-white w-52  -ml-2">
-                                <Link to='/research/published'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Published</a></li></Link>
-                                <Link to='/research/ongoing'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Ongoing</a></li></Link>
+                        <div className="absolute mt-10 hover:bg-white  hidden  rounded-md h-20  p-2 text-black group-hover:block ">
+                            <ul className=" bg-white w-72  -ml-2">
+                                <Link to='/research/published'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Published Research Paper</a></li></Link>
+                                <Link to='/research/ongoing'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Ongoing Research Paper</a></li></Link>
                             </ul>
                         </div>
                     </li>
@@ -127,8 +127,8 @@ const Navbar = () => {
                         </a>
                         <div className="absolute mt-10 hover:bg-white hidden w-52 rounded-md h-20  p-2 text-black group-hover:block ">
                             <ul className=" bg-white w-52  -ml-2">
-                                <Link to='/events/complete'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Complete</a></li></Link>
-                                <Link to='/events/upcoming'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Upcoming</a></li></Link>
+                                <Link to='/events/complete'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Completed Events</a></li></Link>
+                                <Link to='/events/upcoming'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Upcoming Events</a></li></Link>
                             </ul>
                         </div>
                     </li>
