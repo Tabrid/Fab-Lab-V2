@@ -27,7 +27,9 @@ const People = () => {
 
   useEffect(() => {
     setLoader(true);
-    fetch(`https://fab-lab-server-production.up.railway.app/api/person/category/${router.category}`)
+    fetch(
+      `https://fab-lab-server-production.up.railway.app/api/person/category/${router.category}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setPeople(data.data);
@@ -38,12 +40,10 @@ const People = () => {
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
   };
-  
 
   // Filtered people based on search query and selected filter
-  const filteredPeople = people.filter(
-    (person) =>
-      person.name.toLowerCase().includes(searchQuery.toLowerCase()) 
+  const filteredPeople = people.filter((person) =>
+    person.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
   return (
     <div>
@@ -67,17 +67,18 @@ const People = () => {
             {filteredPeople.map((person, index) => (
               <div
                 key={index}
-                className="card flex lg:flex-row md:flex-row flex-col bg-base-100  shadow-xl border-slate-950 border-spacing-0.5 border"
+                className="card flex lg:flex-row md:flex-row flex-col  shadow-xl border-slate-950 border-spacing-0.5 border"
               >
-                <div>
-                  <figure className=" p-5 ">
-                    <img
-                      src={person.image}
-                      alt="Shoes"
-                      className="rounded-xl w-full h-[250px]"
-                    />
-                  </figure>
-                </div>
+                
+                <figure className="p-5">
+              <img
+                src={person.image}
+                alt=""
+                className="h-[200px] rounded-full"
+                
+              />
+            </figure>
+                
                 <div className="card-body items-center text-center border-slate-950 border-spacing-0.5 border-l">
                   <h2 className="card-title">{person.name}</h2>
                   <h2 className="">{person.designation}</h2>
