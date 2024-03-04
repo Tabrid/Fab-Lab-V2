@@ -50,7 +50,7 @@ const Project = () => {
                                 <figure className="px-10 pt-10">
                                     <PhotoProvider>
                                         <PhotoView src={item.image} >
-                                            <img src={item.image} alt="Shoes" className="rounded-xl" />
+                                            <img src={item.image} alt="" className="rounded-xl h-72" />
                                         </PhotoView>
                                     </PhotoProvider>
 
