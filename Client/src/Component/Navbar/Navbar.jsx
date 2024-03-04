@@ -62,9 +62,8 @@ const Navbar = () => {
                         <div className="absolute mt-10 hover:bg-white  hidden w-72 rounded-md h-20  p-2 text-black group-hover:block ">
                             <ul className=" bg-white w-72  -ml-2">
                                 <Link to='/people/Advisory-Panel'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Advisory Panel</a></li></Link>
-                                <Link to='/people/Management-Committee'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Management Committee</a></li></Link>
-                                <Link to='/people/Researchers'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Researcher & Innovation</a></li></Link>
-                                <Link to='/people/Student-Team'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Student Team</a></li></Link>
+                                <Link to='/people/Management-Committee'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Managory Panel</a></li></Link>
+                                <Link to='/people/Student-Team'><li className="text-base font-semibold hover:bg-base-100 hover:ml-2"><a>Team</a></li></Link>
                             </ul>
                         </div>
                     </li>

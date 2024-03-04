@@ -55,7 +55,7 @@ const Banner = () => {
                         <span className="mt-3 text-base">Learning how to make anything for innovation & industrial use.</span>
                     </h1>
                     
-                    <Link><Button name='Join Us' navigation="/membership" ></Button></Link>
+                    <Link><Button name='Join With Us' navigation="/membership" ></Button></Link>
                 </div>
 
             </div>

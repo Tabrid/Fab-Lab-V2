@@ -74,7 +74,7 @@ const People = () => {
               <img
                 src={person.image}
                 alt=""
-                className="h-[200px] rounded-full"
+                className="h-[170px] w-[170px] rounded-full"
                 
               />
             </figure>
