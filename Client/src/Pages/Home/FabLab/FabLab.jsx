@@ -45,7 +45,7 @@ import { BounceLoader } from "react-spinners";
 
                 </div>
             </div>
-            <div className="w-1/2 md:w-1/2 lg:w-1/2 mx-5">
+            <div className="w-full md:w-1/2 lg:w-1/2 mx-5">
                 <div className="card w-full bg-base-100  flex-col items-center justify-center">
                     <h1 className="text-5xl font-bold flex gap-5"><BsCalendar2Event className="text-[#2e3094]" /> NEWS</h1>
                     <div className="card-body w-full">

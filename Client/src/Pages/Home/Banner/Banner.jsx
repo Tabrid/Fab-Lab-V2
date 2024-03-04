@@ -23,7 +23,7 @@ const Banner = () => {
     return (
         <div className="hero   bg-base-200" data-aos="fade-left">
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="w-full lg:w-1/2">
+                <div className="w-full lg:w-1/2 sm:hidden">
                     <Swiper
                         spaceBetween={30}
                         centeredSlides={true}

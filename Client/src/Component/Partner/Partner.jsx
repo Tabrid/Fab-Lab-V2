@@ -27,7 +27,7 @@ const Partner = () => {
         <div className="w-full bg-base-100 flex flex-col justify-center items-center py-16" data-aos="zoom-in">
             <div className="flex-col flex justify-center items-center">
                 <h2 className="text-5xl font-bold uppercase">Our Partners</h2>
-                <p className="text-lg py-3 px-48 text-wrap text-center">Partner There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing</p>
+                <p className="text-lg py-3 px-5 md:px-48 lg:px-48 text-wrap text-center">Partner There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing</p>
             </div>
             <Marquee gradient={false} speed={40} >
             <div className="flex flex-row justify-center items-center gap-24">

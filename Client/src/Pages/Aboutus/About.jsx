@@ -16,7 +16,7 @@ const About = () => {
         <div>
             <Location {...Data} />
         
-        <div className="mx-28 mb-10">
+        <div className=" mx-5 lg:mx-28 md:mx-28 mb-10">
             
             <h1 className="font-bold text-lg mt-5">What We Do</h1>
             <h1 className="font-bold text-lg">LEARN</h1>
